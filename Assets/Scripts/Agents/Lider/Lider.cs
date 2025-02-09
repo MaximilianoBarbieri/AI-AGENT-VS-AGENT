@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,10 +5,13 @@ using UnityEngine;
 public class Lider : MonoBehaviour
 {
     [SerializeField] private LayerMask nodeLayer; // Capa donde están los nodos
+    [SerializeField] private LayerMask obstacleLayer; // Capa donde están los obstáculos (paredes)
     [SerializeField] private float moveSpeed = 5f; // Velocidad de movimiento del líder
     [SerializeField] private MouseButton _buttonDown;
 
-    private Node targetNode; // Nodo al que se dirige
+    [SerializeField] private bool _onDrawGizmos;
+
+    public Node targetNode; // Nodo al que se dirige
     private List<Node> path = new(); // Camino a seguir
 
     private void Update()
@@ -42,19 +44,27 @@ public class Lider : MonoBehaviour
         if (path.Count > 0)
         {
             Node nextNode = path[0];
+
             transform.position = Vector3.MoveTowards(transform.position, nextNode.transform.position,
                 moveSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.LookRotation(nextNode.transform.position - transform.position);
 
             if (Vector3.Distance(transform.position, nextNode.transform.position) < 0.1f)
             {
                 path.RemoveAt(0);
             }
         }
+        else
+        {
+            path.Clear();
+        }
     }
 
     private Node GetCurrentNode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 1f, nodeLayer);
+
         foreach (Collider col in colliders)
         {
             Node node = col.GetComponent<Node>();
@@ -89,46 +99,54 @@ public class Lider : MonoBehaviour
 
         return nearestNode;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (!_onDrawGizmos) return;
+
+        // Dibujar el líder
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 0.5f); // Representar al líder con una esfera roja
+
+        // Gizmo de los nodos en el camino
+        if (path.Count > 0)
+        {
+            Gizmos.color = Color.green;
+            for (int i = 0; i < path.Count - 1; i++)
+            {
+                Gizmos.DrawLine(path[i].transform.position,
+                    path[i + 1].transform.position); // Línea que conecta los nodos en el camino
+                Gizmos.DrawSphere(path[i].transform.position, 0.2f); // Representa cada nodo del camino con una esfera
+            }
+
+            // Representar el último nodo del camino
+            Gizmos.DrawSphere(path[path.Count - 1].transform.position, 0.2f);
+        }
+
+        // Gizmos para los raycasts (LoS)
+        Vector3 forward = transform.forward;
+        Vector3 raycast1End = transform.position + forward * 5f; // Raycast hacia adelante
+        Vector3 raycast2End =
+            transform.position + (forward + transform.right * 1.2f) * 5f; // Raycast desplazado hacia un lado
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, raycast1End); // Raycast 1
+        Gizmos.DrawLine(transform.position, raycast2End); // Raycast 2
+
+        // Opcional: Colorear raycasts según si hay obstáculo o no
+        RaycastHit hit1, hit2;
+        if (Physics.Raycast(transform.position, forward, out hit1, 5f, obstacleLayer) ||
+            Physics.Raycast(transform.position, forward + transform.right * 1.2f, out hit2, 5f, obstacleLayer))
+        {
+            Gizmos.color = Color.red; // Obstáculo detectado
+        }
+        else
+        {
+            Gizmos.color = Color.green; // No hay obstáculo
+        }
+
+        // Raycasts en color rojo si se detecta un obstáculo
+        Gizmos.DrawLine(transform.position, raycast1End);
+        Gizmos.DrawLine(transform.position, raycast2End);
+    }
 }
-
-#region Completed
-
-//● Crear una escena con paredes de por medio, obstáculos pequeños y límite en sus bordes.
-//● El Líder tendrá que dirigirse al lugar más cercano en donde se haga click con
-//el mouse.
-//
-
-#endregion
-
-#region TODO
-
-//● Crear NPCs para ambos bandos y que cada uno tenga un líder que será
-//controlado por el usuario (al menos 5 NPCs por bando).
-//
-//● Las entidades que no son controladas por el usuario deberán utilizar un
-//algoritmo que incluya el sistema de Flocking para moverse cerca del líder
-//(pueden utilizar solo Leader Following (Arrive + Separation) si se lo desea).
-//
-//● Las entidades utilizarán Line of Sight (no FoV) para chequear si pueden
-//llegar a su próximo destino; En el caso de que no pueda llegar a su lugar de
-//destino debido a que hay una pared entre medio se deberá utilizar el algoritmo
-//Theta* para calcular un camino y poder seguir haciendo lo deseado (Por
-//ejemplo: El líder en donde se hizo click, o los npcs hacia donde esta el lider).
-//
-//● Punto Extra: Si el camino que se está siguiendo es obstruido por una pared
-//(no los obstáculos pequeños) se deberá recalcular un camino nuevo.
-//
-//● Desarrollar las FSM necesarias tanto para los líderes (al menos 3 estados)
-//como las otras unidades para que puedan atacar a sus adversarios (al menos 3
-//estados). A su vez, tener en cuenta los siguientes puntos:
-//○ Los enemigos sólo podrán atacar a otros si los tienen en su Área de
-//Visión (Field of View).
-//○ Todos los NPCs valorarán su vida antes que la de su batallón. Es
-//decir, huirán en caso de tener poca HP e intentarán buscar lugares a
-//salvo.
-//
-//● Todos los agentes en la escena deberán esquivar los obstáculos pequeños*
-//que se encuentren en su camino con algún algoritmo de Obstacle Avoidance.
-//*doble o menor tamaño que los agentes. 
-
-#endregion

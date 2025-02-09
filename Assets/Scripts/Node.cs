@@ -13,6 +13,8 @@ public class Node : MonoBehaviour
     private float rayLength = 2.5f; // Radio para buscar vecinos (ligeramente mayor que 1 unidad)
     [SerializeField] private LayerMask nodeLayer; // Capa específica para los nodos
 
+    [SerializeField] private bool _onDrawGizmos;
+
     public float FScore()
     {
         return gScore + hScore;
@@ -56,6 +58,8 @@ public class Node : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (!_onDrawGizmos) return;
+
         if (connections.Count > 0)
         {
             foreach (Node connectedNode in connections)

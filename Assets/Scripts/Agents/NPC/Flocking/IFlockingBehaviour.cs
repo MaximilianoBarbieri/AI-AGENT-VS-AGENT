@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IFlockEntity
+public interface IFlockingBehaviour : IMovementBehaviour
 {
-    Vector3 Dir { get; }
-    Vector3 Pos { get; }
 }
