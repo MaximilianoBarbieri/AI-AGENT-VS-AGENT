@@ -8,7 +8,7 @@ public class SeparationBehavior : IFlockingBehaviour
     {
         Vector3 separationForce = Vector3.zero;
 
-        foreach (NPC neighbor in npc.neighbors)
+        foreach (NPC neighbor in npc.Neighbors)
         {
             Vector3 diff = npc.transform.position - neighbor.transform.position;
             float distance = diff.magnitude;

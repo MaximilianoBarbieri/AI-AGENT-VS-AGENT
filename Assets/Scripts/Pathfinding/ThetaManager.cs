@@ -6,6 +6,12 @@ public class ThetaManager : MonoBehaviour
 {
     public static List<Node> FindPath(Node startNode, Node targetNode)
     {
+        if (startNode == null || targetNode == null)
+        {
+            Debug.LogError("Start or target node is null.");
+            return new List<Node>(); // Devuelve una lista vacía si los nodos son nulos
+        }
+
         PriorityQueue<Node> openSet = new PriorityQueue<Node>();
         HashSet<Node> closedSet = new HashSet<Node>();
 

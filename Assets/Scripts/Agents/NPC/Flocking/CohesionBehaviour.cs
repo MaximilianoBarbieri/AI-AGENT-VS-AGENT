@@ -9,7 +9,7 @@ public class CohesionBehaviour : IFlockingBehaviour
         Vector3 centerOfMass = Vector3.zero;
         int count = 0;
 
-        foreach (var neighbor in npc.neighbors)
+        foreach (var neighbor in npc.Neighbors)
         {
             if (neighbor == npc) continue;
             centerOfMass += neighbor.transform.position;

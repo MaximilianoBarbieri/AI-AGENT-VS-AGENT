@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Lider : MonoBehaviour
 
     public Node targetNode; // Nodo al que se dirige
     private List<Node> path = new(); // Camino a seguir
+
+    public static event Action<Node> OnLeaderMove; // Evento para notificar a los NPCs
 
     private void Update()
     {
@@ -35,6 +38,8 @@ public class Lider : MonoBehaviour
             {
                 targetNode = nearestNode;
                 path = ThetaManager.FindPath(GetCurrentNode(), targetNode);
+                Debug.Log("Líder se mueve hacia: " + targetNode.name); // Debug
+                OnLeaderMove?.Invoke(targetNode);
             }
         }
     }
@@ -43,35 +48,25 @@ public class Lider : MonoBehaviour
     {
         if (path.Count > 0)
         {
-            Node nextNode = path[0];
+            transform.position =
+                Vector3.MoveTowards(transform.position, path[0].transform.position, moveSpeed * Time.deltaTime);
+            transform.LookAt(path[0].transform.position);
 
-            transform.position = Vector3.MoveTowards(transform.position, nextNode.transform.position,
-                moveSpeed * Time.deltaTime);
-
-            transform.rotation = Quaternion.LookRotation(nextNode.transform.position - transform.position);
-
-            if (Vector3.Distance(transform.position, nextNode.transform.position) < 0.1f)
+            if (Vector3.Distance(transform.position, path[0].transform.position) < 0.1f)
             {
                 path.RemoveAt(0);
             }
         }
-        else
-        {
-            path.Clear();
-        }
     }
+
 
     private Node GetCurrentNode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 1f, nodeLayer);
-
         foreach (Collider col in colliders)
         {
             Node node = col.GetComponent<Node>();
-            if (node != null)
-            {
-                return node;
-            }
+            if (node != null) return node;
         }
 
         return null;

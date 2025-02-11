@@ -9,7 +9,7 @@ public class AlignmentBehavior : IFlockingBehaviour
         Vector3 avgDirection = Vector3.zero;
         int count = 0;
 
-        foreach (var neighbor in npc.neighbors)
+        foreach (var neighbor in npc.Neighbors)
         {
             if (neighbor == npc) continue;
             avgDirection += neighbor.Velocity;
