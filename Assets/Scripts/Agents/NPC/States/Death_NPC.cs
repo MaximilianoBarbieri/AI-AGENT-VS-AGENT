@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death_NPC : MonoBehaviour
+public class Death_NPC : State
 {
-    // Start is called before the first frame update
-    void Start()
+    private NPC _npc;
+
+    public Death_NPC(NPC npc)
     {
-        
+        _npc = npc;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEnter()
     {
-        
+    }
+
+    public override void OnUpdate()
+    {
+    }
+
+    public override void OnExit()
+    {
     }
 }

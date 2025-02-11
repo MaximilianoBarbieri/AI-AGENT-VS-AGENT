@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Agents\NPC\States\Attack_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\Lider\Lider.cs" />
      <Compile Include="Assets\Scripts\StateMachine\State.cs" />
+     <Compile Include="Assets\Scripts\Agents\NPC\States\Recovery_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Escape_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\IFlockingBehaviour.cs" />
      <Compile Include="Assets\Scripts\Node.cs" />
@@ -60,7 +61,6 @@
      <Compile Include="Assets\Scripts\Agents\NPC\States\Death_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\CohesionBehaviour.cs" />
      <Compile Include="Assets\Scripts\Agents\ObstacleAvoidanceBehavior.cs" />
-     <Compile Include="Assets\Scripts\Agents\NPC\States\Idle_NPC.cs" />
      <Compile Include="Assets\Scripts\Pathfinding\PriorityQueue.cs" />
      <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\AlignmentBehavior.cs" />

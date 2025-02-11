@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Escape_NPC : MonoBehaviour
+public class Escape_NPC : State
 {
-    // Start is called before the first frame update
-    void Start()
+    private NPC _npc;
+
+    public Escape_NPC(NPC npc)
     {
-        
+        _npc = npc;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEnter()
     {
-        
+    }
+
+    public override void OnUpdate()
+    {
+        //if(_npc.isSafe)
+        //_npc.stateMachine.ChangeState(NPCState.Recovery)
+    }
+
+    public override void OnExit()
+    {
     }
 }

@@ -1,10 +1,8 @@
-using UnityEditor.VersionControl;
-
-public class Walk_NPC : State
+public class Recovery_NPC : State
 {
     private NPC _npc;
 
-    public Walk_NPC(NPC npc)
+    public Recovery_NPC(NPC npc)
     {
         _npc = npc;
     }
@@ -16,9 +14,9 @@ public class Walk_NPC : State
     public override void OnUpdate()
     {
         if (_npc.Health <= 25)
-            _npc.stateMachine.ChangeState(NPCState.Escape);
-
-        _npc.Flocking();
+            _npc.Health += NPC.RegenerationLife;
+        else
+            _npc.stateMachine.ChangeState(NPCState.Walk);
     }
 
     public override void OnExit()
