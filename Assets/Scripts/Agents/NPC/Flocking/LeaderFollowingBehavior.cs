@@ -6,6 +6,6 @@ public class LeaderFollowingBehavior : IFlockingBehaviour
 {
     public Vector3 CalculateSteeringVelocity(NPC npc)
     {
-        return (npc.leader.position - npc.transform.position).normalized * npc.leaderFollowWeight;
+        return (npc.leaderPos.position - npc.transform.position).normalized * npc.leaderFollowWeight;
     }
 }

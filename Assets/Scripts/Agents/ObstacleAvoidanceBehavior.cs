@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class ObstacleAvoidanceBehavior : IMovementBehaviour
 {
-    private float _avoidStrength;
-
-    public ObstacleAvoidanceBehavior(float avoidStrength)
-    {
-        _avoidStrength = avoidStrength;
-    }
+    private Vector3 lastAvoidanceDirection = Vector3.zero;
+    private float avoidanceTimer = 0f;
+    private const float avoidanceDuration = 0.2f; // Segundos que mantiene la evasión
 
     public Vector3 CalculateSteeringVelocity(NPC npc)
     {
         Vector3 avoidanceForce = Vector3.zero;
 
-        if (npc.ObjectInSight == "Both")
+        if (npc.ObjectInSight == "Left")
         {
-            npc.isFlocking = false; //Desactivo el Flocking
-        }
-        else if (npc.ObjectInSight == "Left")
-        {
-            npc.isFlocking = true;
-            avoidanceForce += npc.transform.right * _avoidStrength; // Evita a la derecha
+            lastAvoidanceDirection = npc.transform.right;
+            avoidanceTimer = avoidanceDuration; // Resetea el temporizador
         }
         else if (npc.ObjectInSight == "Right")
         {
-            npc.isFlocking = true;
-            avoidanceForce -= npc.transform.right * _avoidStrength; // Evita a la izquierda
+            lastAvoidanceDirection = -npc.transform.right;
+            avoidanceTimer = avoidanceDuration;
+        }
+
+        // Mantiene la dirección de evasión durante un tiempo después de detectar el obstáculo
+        if (avoidanceTimer > 0)
+        {
+            avoidanceForce = lastAvoidanceDirection * npc.avoidWeight;
+            avoidanceTimer -= Time.deltaTime;
         }
 
         return avoidanceForce;

@@ -41,9 +41,16 @@ public class Node : MonoBehaviour
         foreach (Vector3 direction in directions)
         {
             RaycastHit hit;
-            // Raycast que solo detecta objetos en la capa "Node"
-            if (Physics.Raycast(transform.position, direction, out hit, rayLength, nodeLayer))
+            // Raycast que detecta objetos en cualquier capa
+            if (Physics.Raycast(transform.position, direction, out hit, rayLength))
             {
+                // Si el objeto detectado no está en la capa de nodos, salta esta dirección
+                if ((nodeLayer.value & (1 << hit.collider.gameObject.layer)) == 0)
+                {
+                    Debug.Log($"Objeto detectado fuera de NodeLayer: {hit.collider.name}");
+                    continue; // Saltar esta iteración y probar la siguiente dirección
+                }
+
                 Node neighbor = hit.collider.GetComponent<Node>();
 
                 // Verificar que el nodo vecino no sea nulo, no sea este mismo nodo y no esté ocupado

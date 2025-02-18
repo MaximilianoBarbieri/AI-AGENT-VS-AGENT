@@ -15,8 +15,6 @@ public class Lider : MonoBehaviour
     public Node targetNode; // Nodo al que se dirige
     private List<Node> path = new(); // Camino a seguir
 
-    public static event Action<Node> OnLeaderMove; // Evento para notificar a los NPCs
-
     private void Update()
     {
         if (Input.GetMouseButtonDown((int)_buttonDown))
@@ -39,7 +37,6 @@ public class Lider : MonoBehaviour
                 targetNode = nearestNode;
                 path = ThetaManager.FindPath(GetCurrentNode(), targetNode);
                 Debug.Log("Líder se mueve hacia: " + targetNode.name); // Debug
-                OnLeaderMove?.Invoke(targetNode);
             }
         }
     }
@@ -59,8 +56,7 @@ public class Lider : MonoBehaviour
         }
     }
 
-
-    private Node GetCurrentNode()
+    public Node GetCurrentNode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 1f, nodeLayer);
         foreach (Collider col in colliders)

@@ -18,7 +18,7 @@ public class Walk_NPC : State
 //        if (_npc.Health <= 25)
 //            _npc.stateMachine.ChangeState(NPCState.Escape);
 
-        if (_npc.isFlocking)
+        if (_npc.IsFlocking)
             _npc.Flocking();
         else
             _npc.MoveAlongPath();
