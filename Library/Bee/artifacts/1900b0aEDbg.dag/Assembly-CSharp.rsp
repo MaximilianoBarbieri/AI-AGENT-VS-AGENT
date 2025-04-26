@@ -372,6 +372,8 @@
 "Assets/Scripts/Node.cs"
 "Assets/Scripts/Pathfinding/PriorityQueue.cs"
 "Assets/Scripts/Pathfinding/ThetaManager.cs"
+"Assets/Scripts/Pathfinding/ThetaManager/IMoveNode.cs"
+"Assets/Scripts/Pathfinding/ThetaManager/MoveNodeBase.cs"
 "Assets/Scripts/StateMachine/State.cs"
 "Assets/Scripts/StateMachine/StateMachine.cs"
 -langversion:9.0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    Dictionary<Enum, State> _allStates = new Dictionary<Enum, State>(); //hacerlo generico el primer parametro
+    Dictionary<Enum, State> _allStates = new();
     State _currentState;
 
     public void Update()
@@ -31,7 +31,7 @@ public class StateMachine : MonoBehaviour
         return _currentState.ToString();
     }
 
-    public void ChangeState(Enum name) //Para ir cambiando de estados, los vamos pidiendo
+    public void ChangeState(Enum name)
     {
         _currentState?.OnExit();
         if (_allStates.ContainsKey(name)) _currentState = _allStates[name];

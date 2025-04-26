@@ -1,95 +1,31 @@
-using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Lider : MonoBehaviour
+public class Lider : MoveNodeBase
 {
-    [SerializeField] private LayerMask nodeLayer; // Capa donde están los nodos
-    [SerializeField] private LayerMask obstacleLayer; // Capa donde están los obstáculos (paredes)
-    [SerializeField] private float moveSpeed = 5f; // Velocidad de movimiento del líder
     [SerializeField] private MouseButton _buttonDown;
-
     [SerializeField] private bool _onDrawGizmos;
-
-    public Node targetNode; // Nodo al que se dirige
-    private List<Node> path = new(); // Camino a seguir
 
     private void Update()
     {
         if (Input.GetMouseButtonDown((int)_buttonDown))
-            SetTargetNode();
+            SetTargetNodeFromMouse();
 
         MoveAlongPath();
     }
 
-    private void SetTargetNode()
+    private void SetTargetNodeFromMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Node nearestNode = FindNearestNode(hit.point);
-
-            if (nearestNode != null)
-            {
-                targetNode = nearestNode;
-                path = ThetaManager.FindPath(GetCurrentNode(), targetNode);
-                Debug.Log("Líder se mueve hacia: " + targetNode.name); // Debug
-            }
+            SetTargetNode(hit.point);
+            Debug.Log("Líder se mueve hacia: " + TargetNode?.name);
         }
     }
 
-    private void MoveAlongPath()
-    {
-        if (path.Count > 0)
-        {
-            transform.position =
-                Vector3.MoveTowards(transform.position, path[0].transform.position, moveSpeed * Time.deltaTime);
-            transform.LookAt(path[0].transform.position);
-
-            if (Vector3.Distance(transform.position, path[0].transform.position) < 0.1f)
-            {
-                path.RemoveAt(0);
-            }
-        }
-    }
-
-    public Node GetCurrentNode()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 1f, nodeLayer);
-        foreach (Collider col in colliders)
-        {
-            Node node = col.GetComponent<Node>();
-            if (node != null) return node;
-        }
-
-        return null;
-    }
-
-    private Node FindNearestNode(Vector3 position)
-    {
-        Collider[] colliders = Physics.OverlapSphere(position, 3f, nodeLayer);
-        Node nearestNode = null;
-        float minDistance = Mathf.Infinity;
-
-        foreach (Collider col in colliders)
-        {
-            Node node = col.GetComponent<Node>();
-            if (node != null)
-            {
-                float distance = Vector3.Distance(position, node.transform.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    nearestNode = node;
-                }
-            }
-        }
-
-        return nearestNode;
-    }
+    [SerializeField] private LayerMask obstacleLayer;
 
     private void OnDrawGizmos()
     {
@@ -100,18 +36,18 @@ public class Lider : MonoBehaviour
         Gizmos.DrawSphere(transform.position, 0.5f); // Representar al líder con una esfera roja
 
         // Gizmo de los nodos en el camino
-        if (path.Count > 0)
+        if (Path.Count > 0)
         {
             Gizmos.color = Color.green;
-            for (int i = 0; i < path.Count - 1; i++)
+            for (int i = 0; i < Path.Count - 1; i++)
             {
-                Gizmos.DrawLine(path[i].transform.position,
-                    path[i + 1].transform.position); // Línea que conecta los nodos en el camino
-                Gizmos.DrawSphere(path[i].transform.position, 0.2f); // Representa cada nodo del camino con una esfera
+                Gizmos.DrawLine(Path[i].transform.position,
+                    Path[i + 1].transform.position); // Línea que conecta los nodos en el camino
+                Gizmos.DrawSphere(Path[i].transform.position, 0.2f); // Representa cada nodo del camino con una esfera
             }
 
             // Representar el último nodo del camino
-            Gizmos.DrawSphere(path[path.Count - 1].transform.position, 0.2f);
+            Gizmos.DrawSphere(Path[Path.Count - 1].transform.position, 0.2f);
         }
 
         // Gizmos para los raycasts (LoS)

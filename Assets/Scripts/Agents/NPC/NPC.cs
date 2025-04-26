@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MoveNodeBase
 {
     public float Health { get; set; } = 100f;
     public List<NPC> Neighbors { get; private set; } = new();
     public Vector3 Velocity { get; private set; }
-    public string ObjectInSight { get; private set; }
     public bool IsFlocking { get; private set; }
 
     private const float Damage = 5;
@@ -44,9 +43,6 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        if (!_isFollowingPath)
-            ObjectInSight = LineOfSight();
-
         DetectNeighbors();
     }
 
@@ -75,9 +71,7 @@ public class NPC : MonoBehaviour
         };
     }
 
-    public void TakeDamage(int dmg) => Health -= dmg;
-
-    private string LineOfSight()
+    public string ObstacleAvoidance()
     {
         Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
         Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
@@ -85,40 +79,16 @@ public class NPC : MonoBehaviour
         bool leftHit = Physics.Raycast(leftRayOrigin, transform.forward, 1f, _obstacleMask);
         bool rightHit = Physics.Raycast(rightRayOrigin, transform.forward, 1f, _obstacleMask);
 
-        if (leftHit && rightHit && !_isFollowingPath) // Si ambos detectan y NO está en path
-        {
-            _isFollowingPath = true; // Marca que está siguiendo un camino
-            IsFlocking = false;
-
-            FindPath(_leader.GetCurrentNode());
-
-            return "Both"; // Si está en Theta*, mantiene el estado
-        }
-
-        IsFlocking = true;
-
         return leftHit ? "Left" : rightHit ? "Right" : "None";
     }
 
-    #region Theta*
-
-    private void FindPath(Node targetNode) => _path = ThetaManager.FindPath(GetCurrentNode(), targetNode);
-
-    private Node GetCurrentNode()
+    bool HasLineOfSight()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, _nodeLayer);
-
-        foreach (Collider col in colliders)
-        {
-            Node node = col.GetComponent<Node>();
-
-            if (node != null) return node;
-        }
-
-        return null;
+        Ray ray = new Ray(transform.position, leaderPos.position - transform.position);
+        return !Physics.Raycast(ray, Vector3.Distance(transform.position, leaderPos.position), _obstacleMask);
     }
 
-    public void MoveAlongPath()
+    public override void MoveAlongPath()
     {
         if (_path.Count > 0)
         {
@@ -136,10 +106,6 @@ public class NPC : MonoBehaviour
             }
         }
     }
-
-    #endregion
-
-    #region Flocking
 
     public void Flocking()
     {
@@ -165,11 +131,7 @@ public class NPC : MonoBehaviour
 
         Velocity = movement.normalized * MoveSpeed;
         transform.position += Velocity * Time.deltaTime;
-        RotateTowardsMovement();
-    }
 
-    private void RotateTowardsMovement()
-    {
         if (Velocity.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(Velocity);
@@ -195,7 +157,7 @@ public class NPC : MonoBehaviour
             Neighbors = new List<NPC>(newNeighbors);
     }
 
-    #endregion
+    public void TakeDamage(int dmg) => Health -= dmg;
 
     #region Gizmos
 

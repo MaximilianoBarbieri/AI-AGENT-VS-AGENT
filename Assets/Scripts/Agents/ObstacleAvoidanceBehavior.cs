@@ -11,19 +11,19 @@ public class ObstacleAvoidanceBehavior : IMovementBehaviour
     public Vector3 CalculateSteeringVelocity(NPC npc)
     {
         Vector3 avoidanceForce = Vector3.zero;
+        var dir = npc.ObstacleAvoidance();
 
-        if (npc.ObjectInSight == "Left")
+        if (dir == "Left")
         {
             lastAvoidanceDirection = npc.transform.right;
             avoidanceTimer = avoidanceDuration; // Resetea el temporizador
         }
-        else if (npc.ObjectInSight == "Right")
+        else if (dir == "Right")
         {
             lastAvoidanceDirection = -npc.transform.right;
             avoidanceTimer = avoidanceDuration;
         }
 
-        // Mantiene la dirección de evasión durante un tiempo después de detectar el obstáculo
         if (avoidanceTimer > 0)
         {
             avoidanceForce = lastAvoidanceDirection * npc.avoidWeight;
