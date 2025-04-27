@@ -242,10 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -369,10 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -496,10 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -728,10 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -855,10 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -982,10 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1214,10 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1341,10 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1468,10 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1595,10 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1722,10 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1849,10 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1976,10 +1940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2103,10 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2230,10 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2357,10 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2384,7 +2336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &254217080
 Transform:
   m_ObjectHideFlags: 0
@@ -2483,7 +2435,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 407358554}
+  leader: {fileID: 407358558}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -2491,9 +2449,6 @@ MonoBehaviour:
   leaderFollowWeight: 1.5
   avoidWeight: 1.5
   _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _nodeLayer:
     serializedVersion: 2
     m_Bits: 0
   _path: []
@@ -2618,10 +2573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2745,10 +2697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2872,10 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2999,10 +2945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3126,10 +3069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3253,10 +3193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3380,10 +3317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3507,10 +3441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3634,10 +3565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3761,10 +3689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3788,7 +3713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &407358554
 Transform:
   m_ObjectHideFlags: 0
@@ -3890,13 +3815,13 @@ MonoBehaviour:
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
+  _buttonDown: 1
+  myTeam: 1
+  _onDrawGizmos: 0
+  safeZone: {x: 0, y: 0, z: 0}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
-  moveSpeed: 5
-  _buttonDown: 1
-  _onDrawGizmos: 0
-  targetNode: {fileID: 0}
 --- !u!1 &448875175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,10 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4143,10 +4065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4180,7 +4099,7 @@ Transform:
   m_GameObject: {fileID: 473962959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0400002, y: 0, z: 13.28}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4270,7 +4189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 1186224160}
+  leader: {fileID: 1186224164}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -4279,13 +4204,10 @@ MonoBehaviour:
   avoidWeight: 1.5
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
-  _nodeLayer:
-    serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _path: []
   stateMachine: {fileID: 0}
-  _onDrawGizmos: 1
+  _onDrawGizmos: 0
 --- !u!1 &479205119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,10 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4532,10 +4451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4659,10 +4575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4786,10 +4699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4913,10 +4823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5040,10 +4947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5167,10 +5071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5294,10 +5195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5421,10 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5653,10 +5548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5990,10 +5882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6117,10 +6006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6244,10 +6130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6271,7 +6154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &661224157
 Transform:
   m_ObjectHideFlags: 0
@@ -6370,7 +6253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 407358554}
+  leader: {fileID: 407358558}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -6378,9 +6267,6 @@ MonoBehaviour:
   leaderFollowWeight: 1.5
   avoidWeight: 1.5
   _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _nodeLayer:
     serializedVersion: 2
     m_Bits: 0
   _path: []
@@ -6505,10 +6391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6632,10 +6515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6759,10 +6639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6886,10 +6763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7107,10 +6981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7234,10 +7105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7271,7 +7139,7 @@ Transform:
   m_GameObject: {fileID: 775232615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.88, y: 0, z: 18.5}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -7361,7 +7229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 1186224160}
+  leader: {fileID: 1186224164}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -7370,13 +7244,10 @@ MonoBehaviour:
   avoidWeight: 1.5
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
-  _nodeLayer:
-    serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _path: []
   stateMachine: {fileID: 0}
-  _onDrawGizmos: 1
+  _onDrawGizmos: 0
 --- !u!1 &782852107
 GameObject:
   m_ObjectHideFlags: 0
@@ -7496,10 +7367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7623,10 +7491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7750,10 +7615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7877,10 +7739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8004,10 +7863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8131,10 +7987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8258,10 +8111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8385,10 +8235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8512,10 +8359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8675,10 +8519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9000,7 +8841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &982815836
 Transform:
   m_ObjectHideFlags: 0
@@ -9135,10 +8976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9277,7 +9115,7 @@ Transform:
   m_GameObject: {fileID: 998965357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7500002, y: 0, z: 10.41}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9367,7 +9205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 1186224160}
+  leader: {fileID: 1186224164}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -9376,13 +9220,10 @@ MonoBehaviour:
   avoidWeight: 1.5
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
-  _nodeLayer:
-    serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _path: []
   stateMachine: {fileID: 0}
-  _onDrawGizmos: 1
+  _onDrawGizmos: 0
 --- !u!1 &1022271799
 GameObject:
   m_ObjectHideFlags: 0
@@ -9502,10 +9343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9629,10 +9467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9756,10 +9591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9883,10 +9715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10162,10 +9991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10289,10 +10115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10416,10 +10239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10543,10 +10363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10670,10 +10487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10797,10 +10611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10924,10 +10735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11051,10 +10859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11213,10 +11018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11250,7 +11052,7 @@ Transform:
   m_GameObject: {fileID: 1186224159}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.57, y: 0, z: 19.46}
+  m_LocalPosition: {x: -0.8, y: 0, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11343,13 +11145,13 @@ MonoBehaviour:
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
+  _buttonDown: 0
+  myTeam: 1
+  _onDrawGizmos: 0
+  safeZone: {x: 0, y: 0, z: 0}
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 64
-  moveSpeed: 5
-  _buttonDown: 0
-  _onDrawGizmos: 0
-  targetNode: {fileID: 0}
+    m_Bits: 0
 --- !u!1 &1232947079
 GameObject:
   m_ObjectHideFlags: 0
@@ -11469,10 +11271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11596,10 +11395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11828,10 +11624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12060,10 +11853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12087,7 +11877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1353360513
 Transform:
   m_ObjectHideFlags: 0
@@ -12186,7 +11976,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 407358554}
+  leader: {fileID: 407358558}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -12194,9 +11990,6 @@ MonoBehaviour:
   leaderFollowWeight: 1.5
   avoidWeight: 1.5
   _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _nodeLayer:
     serializedVersion: 2
     m_Bits: 0
   _path: []
@@ -12321,10 +12114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12448,10 +12238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12575,10 +12362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12807,10 +12591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12934,10 +12715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13061,10 +12839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13188,10 +12963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13315,10 +13087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13442,10 +13211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13674,10 +13440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13711,7 +13474,7 @@ Transform:
   m_GameObject: {fileID: 1659975025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9900002, y: 0, z: 15.93}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -13801,7 +13564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 1186224160}
+  leader: {fileID: 1186224164}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -13810,13 +13579,10 @@ MonoBehaviour:
   avoidWeight: 1.5
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
-  _nodeLayer:
-    serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _path: []
   stateMachine: {fileID: 0}
-  _onDrawGizmos: 1
+  _onDrawGizmos: 0
 --- !u!1 &1676818897
 GameObject:
   m_ObjectHideFlags: 0
@@ -13936,10 +13702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14168,10 +13931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14295,10 +14055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14422,10 +14179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14449,7 +14203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1742829497
 Transform:
   m_ObjectHideFlags: 0
@@ -14548,7 +14302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 407358554}
+  leader: {fileID: 407358558}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -14556,9 +14316,6 @@ MonoBehaviour:
   leaderFollowWeight: 1.5
   avoidWeight: 1.5
   _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _nodeLayer:
     serializedVersion: 2
     m_Bits: 0
   _path: []
@@ -14714,10 +14471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14841,10 +14595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14968,10 +14719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15095,10 +14843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15327,10 +15072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15454,10 +15196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15581,10 +15320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15708,10 +15444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15835,10 +15568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15862,7 +15592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1818251476
 Transform:
   m_ObjectHideFlags: 0
@@ -15961,7 +15691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 407358554}
+  leader: {fileID: 407358558}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -15969,9 +15705,6 @@ MonoBehaviour:
   leaderFollowWeight: 1.5
   avoidWeight: 1.5
   _obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _nodeLayer:
     serializedVersion: 2
     m_Bits: 0
   _path: []
@@ -16096,10 +15829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16223,10 +15953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16350,10 +16077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16477,10 +16201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16604,10 +16325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16641,7 +16359,7 @@ Transform:
   m_GameObject: {fileID: 1890026981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.94, y: 0, z: 7.9300003}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -16731,7 +16449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64b6a9fd273c7848a34433eb33e1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Neighbors: []
+  minDistanceLeader: 1
   leaderPos: {fileID: 1186224160}
+  leader: {fileID: 1186224164}
   cohesionWeight: 1
   alignmentWeight: 1
   separationWeight: 1.5
@@ -16740,13 +16464,10 @@ MonoBehaviour:
   avoidWeight: 1.5
   _obstacleMask:
     serializedVersion: 2
-    m_Bits: 64
-  _nodeLayer:
-    serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   _path: []
   stateMachine: {fileID: 0}
-  _onDrawGizmos: 1
+  _onDrawGizmos: 0
 --- !u!1 &1914526074
 GameObject:
   m_ObjectHideFlags: 0
@@ -16866,10 +16587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16993,10 +16711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17120,10 +16835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17247,10 +16959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17374,10 +17083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17606,10 +17312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17733,10 +17436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17860,10 +17560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17987,10 +17684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18114,10 +17808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18241,10 +17932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18368,10 +18056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18495,10 +18180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18622,10 +18304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18749,10 +18428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -18876,10 +18552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -19003,10 +18676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -19130,10 +18800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44cb91edceee824b9232dc2d7fe2c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameFrom: {fileID: 0}
   connections: []
-  gScore: 0
-  hScore: 0
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -1,20 +1,25 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class NPC : MoveNodeBase
 {
     public float Health { get; set; } = 100f;
-    public List<NPC> Neighbors { get; private set; } = new();
+    [SerializeField] public List<NPC> Neighbors = new();
+    public List<NPC> Enemys { get; private set; } = new();
     public Vector3 Velocity { get; private set; }
-    public bool IsFlocking { get; private set; }
 
     private const float Damage = 5;
     private const float MoveSpeed = 4.5f;
+    private const float ViewAngle = 60;
+
     public const float RegenerationLife = 0.5f;
 
-    [Header("Flocking Properties")] public Transform leaderPos;
+    [Range(0, 10)] public float minDistanceLeader = 1f;
 
-    private Lider _leader;
+    [Header("Flocking Properties")] public Transform leaderPos;
+    public Lider leader;
 
     [Range(0, 10)] public float cohesionWeight = 1.0f;
     [Range(0, 10)] public float alignmentWeight = 1.0f;
@@ -26,30 +31,32 @@ public class NPC : MoveNodeBase
     private List<IMovementBehaviour> _behaviors;
 
     [SerializeField] private LayerMask _obstacleMask;
-    [SerializeField] private LayerMask _nodeLayer;
 
     [SerializeField] private List<Node> _path = new(); // Camino a seguir
-    private bool _isFollowingPath; // Nueva variable para saber si está siguiendo Theta*
 
-    [HideInInspector] public StateMachine stateMachine;
+    public StateMachine stateMachine;
 
     private void Start()
     {
-        _leader = leaderPos.GetComponent<Lider>();
+        leaderPos = leader.transform;
 
         InitializeStateMachine();
         InitializeBehaviors();
     }
 
-    private void Update()
+    private void Update() //TODO: COSAS QUE SE CHEQUEAN SIEMPRE [NEIGHBORS, DEATH, ESCAPE]
     {
         DetectNeighbors();
+        stateMachine.Update();
     }
+
+    #region Initialize
 
     private void InitializeStateMachine()
     {
         stateMachine = gameObject.AddComponent<StateMachine>();
 
+        stateMachine.AddState(NPCState.Await, new Await_NPC(this));
         stateMachine.AddState(NPCState.Walk, new Walk_NPC(this));
         stateMachine.AddState(NPCState.Attack, new Attack_NPC(this));
         stateMachine.AddState(NPCState.Escape, new Escape_NPC(this));
@@ -69,7 +76,11 @@ public class NPC : MoveNodeBase
             new LeaderFollowingBehavior(),
             new ObstacleAvoidanceBehavior()
         };
-    }
+    } //TODO: CLASE ENTITY
+
+    #endregion
+
+    #region MovementBehavior
 
     public string ObstacleAvoidance()
     {
@@ -80,32 +91,7 @@ public class NPC : MoveNodeBase
         bool rightHit = Physics.Raycast(rightRayOrigin, transform.forward, 1f, _obstacleMask);
 
         return leftHit ? "Left" : rightHit ? "Right" : "None";
-    }
-
-    bool HasLineOfSight()
-    {
-        Ray ray = new Ray(transform.position, leaderPos.position - transform.position);
-        return !Physics.Raycast(ray, Vector3.Distance(transform.position, leaderPos.position), _obstacleMask);
-    }
-
-    public override void MoveAlongPath()
-    {
-        if (_path.Count > 0)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, _path[0].transform.position,
-                MoveSpeed * Time.deltaTime);
-            transform.LookAt(_path[0].transform.position);
-
-            if (Vector3.Distance(transform.position, _path[0].transform.position) < 0.1f)
-                _path.RemoveAt(0);
-
-            if (_path.Count == 0) // Si terminó el path
-            {
-                _isFollowingPath = false; // Permitir volver a flocking
-                IsFlocking = true;
-            }
-        }
-    }
+    } //TODO: CLASE ENTITY
 
     public void Flocking()
     {
@@ -137,25 +123,60 @@ public class NPC : MoveNodeBase
             Quaternion targetRotation = Quaternion.LookRotation(Velocity);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
-    }
+    } //TODO: CLASE ENTITY
+
+    #endregion
 
     private void DetectNeighbors()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, separationDistance);
+
         HashSet<NPC> newNeighbors = new HashSet<NPC>();
 
         foreach (Collider col in colliders)
         {
-            NPC neighbor = col.GetComponent<NPC>();
-            if (neighbor != null && neighbor != this)
+            NPC npc = col.GetComponent<NPC>();
+
+            if (npc != null && npc != this)
             {
-                newNeighbors.Add(neighbor);
+                newNeighbors.Add(npc);
             }
         }
 
-        if (newNeighbors.Count != Neighbors.Count || !newNeighbors.SetEquals(Neighbors))
-            Neighbors = new List<NPC>(newNeighbors);
+        Neighbors = new List<NPC>(newNeighbors);
     }
+
+    #region LoS - FoV
+
+    public bool HasLineOfSight()
+    {
+        // Lanza un raycast desde el personaje hacia el objetivo con una distancia máxima
+        RaycastHit hit;
+        Vector3 directionToTarget = (leaderPos.position - transform.position).normalized;
+        float maxDistance = Vector3.Distance(transform.position, leaderPos.position); // Distancia máxima al objetivo
+
+        // Si el raycast choca con algo, revisamos si es el objetivo
+        if (Physics.Raycast(transform.position, directionToTarget, out hit, maxDistance))
+        {
+            // Verifica si el objeto golpeado es el líder
+            if (hit.transform == leaderPos)
+            {
+                return true; // Línea de visión clara hacia el objetivo
+            }
+        }
+
+        return false; // Algo bloquea la línea de visión
+    }
+
+
+    //bool HasFieldOfView()
+    //{
+    //    float angle = Vector3.Angle(transform.forward, directionToTarget);
+    //
+    //    return angle < ViewAngle / 2f;
+    //}
+
+    #endregion
 
     public void TakeDamage(int dmg) => Health -= dmg;
 
@@ -208,6 +229,7 @@ public class NPC : MoveNodeBase
 
 public enum NPCState
 {
+    Await,
     Walk,
     Attack,
     Escape,

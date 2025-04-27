@@ -1,11 +1,13 @@
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lider : MoveNodeBase
 {
     [SerializeField] private MouseButton _buttonDown;
+    [SerializeField] public Team myTeam;
     [SerializeField] private bool _onDrawGizmos;
+
+    public Vector3 safeZone;
 
     private void Update()
     {
@@ -75,5 +77,11 @@ public class Lider : MoveNodeBase
         // Raycasts en color rojo si se detecta un obstáculo
         Gizmos.DrawLine(transform.position, raycast1End);
         Gizmos.DrawLine(transform.position, raycast2End);
+    }
+
+    public enum Team
+    {
+        Red,
+        Blue
     }
 }

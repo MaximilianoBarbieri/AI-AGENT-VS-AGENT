@@ -49,7 +49,9 @@
      <Compile Include="Assets\Scripts\Agents\IMovementBehaviour.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Attack_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\Lider\Lider.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\ThetaManager\IMoveNode.cs" />
      <Compile Include="Assets\Scripts\StateMachine\State.cs" />
+     <Compile Include="Assets\Scripts\Pathfinding\ThetaManager\MoveNodeBase.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Recovery_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Escape_NPC.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\IFlockingBehaviour.cs" />
@@ -79,6 +81,7 @@
      <Folder Include="Assets\Art" />
      <Folder Include="Assets\Scripts\Agents\NPC" />
      <Folder Include="Assets\Art\Material" />
+     <Folder Include="Assets\Scripts\Pathfinding\ThetaManager" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity 2022.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

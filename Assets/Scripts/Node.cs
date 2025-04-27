@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public Node cameFrom;
     public List<Node> connections;
-
-    public float gScore;
-    public float hScore;
 
     private float rayLength = 2.5f; // Radio para buscar vecinos (ligeramente mayor que 1 unidad)
     [SerializeField] private LayerMask nodeLayer; // Capa específica para los nodos
 
     [SerializeField] private bool _onDrawGizmos;
 
-    public float FScore()
-    {
-        return gScore + hScore;
-    }
-
     private void Start() => FindConnections();
 
-    public void FindConnections()
+    private void FindConnections()
     {
         connections.Clear(); // Asegurarse de que no haya conexiones previas
 
@@ -57,7 +48,7 @@ public class Node : MonoBehaviour
                 if (neighbor != null && neighbor != this)
                 {
                     connections.Add(neighbor);
-                    Debug.Log($"Nodo conectado: {neighbor.name}");
+//                    Debug.Log($"Nodo conectado: {neighbor.name}");
                 }
             }
         }

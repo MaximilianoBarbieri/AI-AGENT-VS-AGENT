@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Await_NPC : State
 {
     private NPC _npc;
@@ -13,6 +15,10 @@ public class Await_NPC : State
 
     public override void OnUpdate()
     {
+        Debug.Log("AWAIT STATE");
+        
+        if (Vector3.Distance(_npc.transform.position, _npc.leaderPos.position) > _npc.minDistanceLeader)
+            _npc.stateMachine.ChangeState(NPCState.Walk);
     }
 
     public override void OnExit()

@@ -13,12 +13,15 @@ public class Escape_NPC : State
 
     public override void OnEnter()
     {
+        _npc.SetTargetNode(_npc.leader.safeZone);
     }
 
     public override void OnUpdate()
     {
-        //if(_npc.isSafe)
-        //_npc.stateMachine.ChangeState(NPCState.Recovery)
+        if (Vector3.Distance(_npc.transform.position, _npc.leader.safeZone) > 0.1f)
+            _npc.MoveAlongPath();
+        else
+            _npc.stateMachine.ChangeState(NPCState.Recovery);
     }
 
     public override void OnExit()

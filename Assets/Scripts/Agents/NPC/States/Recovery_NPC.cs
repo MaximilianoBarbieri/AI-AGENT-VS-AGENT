@@ -16,7 +16,7 @@ public class Recovery_NPC : State
         if (_npc.Health <= 25)
             _npc.Health += NPC.RegenerationLife;
         else
-            _npc.stateMachine.ChangeState(NPCState.Walk);
+            _npc.stateMachine.ChangeState(NPCState.Await);
     }
 
     public override void OnExit()
