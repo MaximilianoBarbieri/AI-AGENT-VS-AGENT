@@ -8,7 +8,7 @@ public class MoveNodeBase : MonoBehaviour, IMoveNode
     protected List<Node> Path = new();
     protected Node TargetNode;
 
-    private const int MoveSpeed = 5;
+    protected const int MoveSpeed = 5;
 
     public Node GetCurrentNode()
     {

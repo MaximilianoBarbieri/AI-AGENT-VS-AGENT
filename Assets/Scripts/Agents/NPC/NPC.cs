@@ -11,7 +11,6 @@ public class NPC : MoveNodeBase
     public Vector3 Velocity { get; private set; }
 
     private const float Damage = 5;
-    private const float MoveSpeed = 4.5f;
     private const float ViewAngle = 60;
 
     public const float RegenerationLife = 0.5f;
@@ -179,52 +178,6 @@ public class NPC : MoveNodeBase
     #endregion
 
     public void TakeDamage(int dmg) => Health -= dmg;
-
-    #region Gizmos
-
-    [SerializeField] private bool _onDrawGizmos;
-
-    private void OnDrawGizmos()
-    {
-        if (!_onDrawGizmos) return;
-
-        Vector3 forward = transform.forward;
-        Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
-        Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
-
-        // Raycasts
-        bool leftHit = Physics.Raycast(leftRayOrigin, forward, 1f, _obstacleMask);
-        bool rightHit = Physics.Raycast(rightRayOrigin, forward, 1f, _obstacleMask);
-
-        Gizmos.color = leftHit ? Color.red : Color.yellow;
-        Gizmos.DrawLine(leftRayOrigin, leftRayOrigin + forward * 1.5f);
-
-        Gizmos.color = rightHit ? Color.red : Color.yellow;
-        Gizmos.DrawLine(rightRayOrigin, rightRayOrigin + forward * 1.5f);
-
-        // Separation Distance
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, separationDistance);
-
-        // Dirección del NPC
-        if (Velocity.magnitude > 0.1f)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, transform.position + Velocity);
-        }
-
-        // Dibujo del camino (_path_)
-        if (_path != null && _path.Count > 0)
-        {
-            Gizmos.color = Color.cyan;
-            for (int i = 0; i < _path.Count - 1; i++)
-            {
-                Gizmos.DrawLine(_path[i].transform.position, _path[i + 1].transform.position);
-            }
-        }
-    }
-
-    #endregion
 }
 
 public enum NPCState

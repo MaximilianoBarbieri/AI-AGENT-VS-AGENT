@@ -1,87 +1,73 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lider : MoveNodeBase
 {
-    [SerializeField] private MouseButton _buttonDown;
     [SerializeField] public Team myTeam;
     [SerializeField] private bool _onDrawGizmos;
 
+    internal MouseButton _buttonDown;
+
+    public StateMachine stateMachine;
     public Vector3 safeZone;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetMouseButtonDown((int)_buttonDown))
-            SetTargetNodeFromMouse();
+        _buttonDown = myTeam == Team.Red ? MouseButton.Left : MouseButton.Right;
 
-        MoveAlongPath();
+        stateMachine = gameObject.AddComponent<StateMachine>();
+
+        stateMachine.AddState(LeaderState.Await, new Await_Leader(this));
+        stateMachine.AddState(LeaderState.Walk, new Walk_Leader(this));
+        stateMachine.AddState(LeaderState.Attack, new Attack_Leader(this));
+
+        stateMachine.ChangeState(LeaderState.Await);
     }
 
-    private void SetTargetNodeFromMouse()
+    public void SetTargetNode()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            SetTargetNode(hit.point);
-            Debug.Log("Líder se mueve hacia: " + TargetNode?.name);
+            Node nearestNode = FindNearestNode(hit.point);
+
+            if (nearestNode != null)
+            {
+                TargetNode = nearestNode;
+                Path = ThetaManager.FindPath(GetCurrentNode(), TargetNode);
+
+                stateMachine.ChangeState(LeaderState.Walk);
+            }
         }
     }
 
-    [SerializeField] private LayerMask obstacleLayer;
-
-    private void OnDrawGizmos()
+    public void MoveAlongPath()
     {
-        if (!_onDrawGizmos) return;
+        if (Path.Count == 0) return;
 
-        // Dibujar el líder
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.5f); // Representar al líder con una esfera roja
+        transform.position =
+            Vector3.MoveTowards(transform.position, Path[0].transform.position, MoveSpeed * Time.deltaTime);
+        transform.LookAt(Path[0].transform.position);
 
-        // Gizmo de los nodos en el camino
-        if (Path.Count > 0)
+        if (Vector3.Distance(transform.position, Path[0].transform.position) < 0.1f)
         {
-            Gizmos.color = Color.green;
-            for (int i = 0; i < Path.Count - 1; i++)
-            {
-                Gizmos.DrawLine(Path[i].transform.position,
-                    Path[i + 1].transform.position); // Línea que conecta los nodos en el camino
-                Gizmos.DrawSphere(Path[i].transform.position, 0.2f); // Representa cada nodo del camino con una esfera
-            }
-
-            // Representar el último nodo del camino
-            Gizmos.DrawSphere(Path[Path.Count - 1].transform.position, 0.2f);
+            Path.RemoveAt(0);
+            stateMachine.ChangeState(LeaderState.Await);
         }
-
-        // Gizmos para los raycasts (LoS)
-        Vector3 forward = transform.forward;
-        Vector3 raycast1End = transform.position + forward * 5f; // Raycast hacia adelante
-        Vector3 raycast2End =
-            transform.position + (forward + transform.right * 1.2f) * 5f; // Raycast desplazado hacia un lado
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, raycast1End); // Raycast 1
-        Gizmos.DrawLine(transform.position, raycast2End); // Raycast 2
-
-        // Opcional: Colorear raycasts según si hay obstáculo o no
-        RaycastHit hit1, hit2;
-        if (Physics.Raycast(transform.position, forward, out hit1, 5f, obstacleLayer) ||
-            Physics.Raycast(transform.position, forward + transform.right * 1.2f, out hit2, 5f, obstacleLayer))
-        {
-            Gizmos.color = Color.red; // Obstáculo detectado
-        }
-        else
-        {
-            Gizmos.color = Color.green; // No hay obstáculo
-        }
-
-        // Raycasts en color rojo si se detecta un obstáculo
-        Gizmos.DrawLine(transform.position, raycast1End);
-        Gizmos.DrawLine(transform.position, raycast2End);
     }
 
     public enum Team
     {
         Red,
         Blue
+    }
+
+    public enum LeaderState
+    {
+        Await,
+        Attack,
+        Walk
     }
 }
