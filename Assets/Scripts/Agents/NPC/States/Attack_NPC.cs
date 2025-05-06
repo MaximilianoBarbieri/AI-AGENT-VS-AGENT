@@ -13,7 +13,6 @@ public class Attack_NPC : State
 
     public override void OnEnter()
     {
-        Debug.Log("ON ENTER - ATTACK STATE - NPC");
         _npc.attackFXRenderer.enabled = true;
 
         _npc.attackFXRenderer.SetPosition(0, _npc.transform.position);
@@ -35,7 +34,6 @@ public class Attack_NPC : State
 
     public override void OnExit()
     {
-        Debug.Log("ON EXIT - ATTACK STATE - NPC");
         _npc.attackFXRenderer.enabled = false;
         _currentCd = 0;
     }

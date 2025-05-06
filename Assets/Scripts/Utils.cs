@@ -40,5 +40,10 @@ public static class Utils
         Walk
     }
 
-    public const float LEADER_MOVE_SPEED = 4F;
+    public const float LEADER_CD_ATTACK_ORIG = 3f;
+
+    
+    public const float LEADER_MOVE_SPEED = 4f;
+    public const int LEADER_DAMAGE = 10;
+    public const float LEADER_RADIUS_ATTACK = 3f;
 }
