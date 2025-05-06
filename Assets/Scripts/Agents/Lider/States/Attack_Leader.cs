@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Attack_Leader : State
 {
-    private Lider _lider;
+    private Leader _leader;
 
-    public Attack_Leader(Lider lider)
+    public Attack_Leader(Leader leader)
     {
-        _lider = lider;
+        _leader = leader;
     }
 
     public override void OnEnter()

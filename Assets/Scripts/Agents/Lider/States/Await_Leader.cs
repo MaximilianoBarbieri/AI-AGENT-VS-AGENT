@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using static Utils;
 using UnityEngine;
 
 public class Await_Leader : State
 {
-    private Lider _lider;
+    private Leader _leader;
 
-    public Await_Leader(Lider lider)
+    public Await_Leader(Leader leader)
     {
-        _lider = lider;
+        _leader = leader;
     }
 
     public override void OnEnter()
@@ -17,9 +16,8 @@ public class Await_Leader : State
 
     public override void OnUpdate()
     {
-        if (Input.GetMouseButtonDown((int)_lider._buttonDown))
-            _lider.SetTargetNode();
-
+        if (_leader.useTheta || _leader.useMove)
+            _leader.stateMachine.ChangeState(LeaderState.Walk);
     }
 
     public override void OnExit()

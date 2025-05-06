@@ -6,49 +6,49 @@ public class Node : MonoBehaviour
 {
     public List<Node> connections;
 
-    private float rayLength = 2.5f; // Radio para buscar vecinos (ligeramente mayor que 1 unidad)
-    [SerializeField] private LayerMask nodeLayer; // Capa específica para los nodos
-
+    private float rayLength = 2.5f;
+    [SerializeField] private LayerMask nodeLayer;
+    
     [SerializeField] private bool _onDrawGizmos;
 
     private void Start() => FindConnections();
 
     private void FindConnections()
     {
-        connections.Clear(); // Asegurarse de que no haya conexiones previas
+        connections.Clear();
 
         Vector3[] directions =
         {
-            Vector3.right, // Derecha
-            Vector3.left, // Izquierda
-            Vector3.forward, // Arriba
-            Vector3.back, // Abajo
-            Vector3.right + Vector3.forward, // Arriba derecha
-            Vector3.left + Vector3.forward, // Arriba izquierda
-            Vector3.right + Vector3.back, // Abajo derecha
-            Vector3.left + Vector3.back // Abajo izquierda
+            Vector3.right,
+            Vector3.left,
+            Vector3.forward,
+            Vector3.back,
+            Vector3.right + Vector3.forward,
+            Vector3.left + Vector3.forward,
+            Vector3.right + Vector3.back,
+            Vector3.left + Vector3.back
         };
 
         foreach (Vector3 direction in directions)
         {
             RaycastHit hit;
-            // Raycast que detecta objetos en cualquier capa
+
             if (Physics.Raycast(transform.position, direction, out hit, rayLength))
             {
-                // Si el objeto detectado no está en la capa de nodos, salta esta dirección
+
                 if ((nodeLayer.value & (1 << hit.collider.gameObject.layer)) == 0)
                 {
                     Debug.Log($"Objeto detectado fuera de NodeLayer: {hit.collider.name}");
-                    continue; // Saltar esta iteración y probar la siguiente dirección
+                    continue; 
                 }
 
                 Node neighbor = hit.collider.GetComponent<Node>();
 
-                // Verificar que el nodo vecino no sea nulo, no sea este mismo nodo y no esté ocupado
+
                 if (neighbor != null && neighbor != this)
                 {
                     connections.Add(neighbor);
-//                    Debug.Log($"Nodo conectado: {neighbor.name}");
+                    Debug.Log($"Nodo conectado: {neighbor.name}");
                 }
             }
         }

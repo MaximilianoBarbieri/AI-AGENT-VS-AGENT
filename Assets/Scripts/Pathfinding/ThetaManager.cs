@@ -36,10 +36,8 @@ public class ThetaManager : MonoBehaviour
                 if (closedSet.Contains(neighbor))
                     continue;
 
-                // Nodo padre de referencia
                 Node parent = cameFrom.ContainsKey(current) ? cameFrom[current] : current;
 
-                // Línea de visión directa desde el padre al vecino
                 if (HasLineOfSight(parent, neighbor))
                 {
                     float newG = gScore[parent] + Vector3.Distance(parent.transform.position, neighbor.transform.position);
@@ -71,7 +69,7 @@ public class ThetaManager : MonoBehaviour
             }
         }
 
-        return new List<Node>(); // Si no se encuentra camino
+        return new List<Node>();
     }
 
     private static bool HasLineOfSight(Node from, Node to)
@@ -79,7 +77,6 @@ public class ThetaManager : MonoBehaviour
         Vector3 direction = to.transform.position - from.transform.position;
         float distance = direction.magnitude;
 
-        // Opcional: ajustá el layerMask si querés ignorar ciertas capas
         return !Physics.Raycast(from.transform.position, direction.normalized, distance);
     }
 

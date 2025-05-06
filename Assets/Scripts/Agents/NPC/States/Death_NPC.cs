@@ -13,6 +13,7 @@ public class Death_NPC : State
 
     public override void OnEnter()
     {
+        Debug.Log(_npc.name + "Fue asesinado!");
     }
 
     public override void OnUpdate()

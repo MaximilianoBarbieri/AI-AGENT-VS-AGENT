@@ -353,9 +353,10 @@
 -analyzer:"C:/Program Files/Unity 2022.3.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity 2022.3.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Agents/IMovementBehaviour.cs"
-"Assets/Scripts/Agents/IMovementTheta.cs"
-"Assets/Scripts/Agents/Lider/Lider.cs"
-"Assets/Scripts/Agents/LineOfSightBehavior.cs"
+"Assets/Scripts/Agents/Lider/Leader.cs"
+"Assets/Scripts/Agents/Lider/States/Attack_Leader.cs"
+"Assets/Scripts/Agents/Lider/States/Await_Leader.cs"
+"Assets/Scripts/Agents/Lider/States/Walk_Leader.cs"
 "Assets/Scripts/Agents/NPC/Flocking/AlignmentBehavior.cs"
 "Assets/Scripts/Agents/NPC/Flocking/CohesionBehaviour.cs"
 "Assets/Scripts/Agents/NPC/Flocking/IFlockingBehaviour.cs"
@@ -372,10 +373,11 @@
 "Assets/Scripts/Node.cs"
 "Assets/Scripts/Pathfinding/PriorityQueue.cs"
 "Assets/Scripts/Pathfinding/ThetaManager.cs"
-"Assets/Scripts/Pathfinding/ThetaManager/IMoveNode.cs"
-"Assets/Scripts/Pathfinding/ThetaManager/MoveNodeBase.cs"
+"Assets/Scripts/Pathfinding/ThetaManager/Entity.cs"
+"Assets/Scripts/Pathfinding/ThetaManager/IThetaMovement.cs"
 "Assets/Scripts/StateMachine/State.cs"
 "Assets/Scripts/StateMachine/StateMachine.cs"
+"Assets/Scripts/Utils.cs"
 -langversion:9.0
 
 /deterministic

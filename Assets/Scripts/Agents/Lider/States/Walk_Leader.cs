@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static Utils;
 
 public class Walk_Leader : State
 {
-    private Lider _lider;
+    private Leader _leader;
 
-    public Walk_Leader(Lider lider)
+    public Walk_Leader(Leader leader)
     {
-        _lider = lider;
+        _leader = leader;
     }
 
 
@@ -18,10 +17,18 @@ public class Walk_Leader : State
 
     public override void OnUpdate()
     {
-        _lider.MoveAlongPath();
+        if (_leader.useMove)
+            _leader.Move();
+        else if (_leader.useTheta && _leader.targetNode != null)
+            _leader.MoveAlongPath(LEADER_MOVE_SPEED);
+
+        if (Vector3.Distance(_leader.transform.position, _leader.directTargetPos) <= 0.1f)
+            stateMachine.ChangeState(LeaderState.Await);
     }
 
     public override void OnExit()
     {
+        _leader.useMove = false;
+        _leader.useTheta = false;
     }
 }

@@ -1,9 +1,10 @@
 using UnityEngine;
+using static Utils;
 
 public class Walk_NPC : State
 {
     private NPC _npc;
-    private bool _useFlocking;
+    private bool _inVisionRange;
 
     public Walk_NPC(NPC npc)
     {
@@ -12,23 +13,23 @@ public class Walk_NPC : State
 
     public override void OnEnter()
     {
-        Debug.Log("ON ENTER DE WALK");
-        _useFlocking = _npc.HasLineOfSight();
-
-        _npc.SetTargetNode(_npc.leaderPos.position);
     }
 
     public override void OnUpdate()
     {
-        Debug.Log("WALK STATE");
-
-        if (!_useFlocking)
+        if (_npc.HasLineOfSight())
             _npc.Flocking();
         else
-            _npc.MoveAlongPath();
+            _npc.MoveAlongPath(_npc.MoveSpeed);
 
         if (Vector3.Distance(_npc.transform.position, _npc.leaderPos.position) <= _npc.minDistanceLeader)
             _npc.stateMachine.ChangeState(NPCState.Await);
+
+        if (_npc.PatrolWithFoV() != null)
+            _npc.stateMachine.ChangeState(NPCState.Attack);
+
+        if (_npc.Health <= 25)
+            _npc.stateMachine.ChangeState(NPCState.Escape);
     }
 
     public override void OnExit()

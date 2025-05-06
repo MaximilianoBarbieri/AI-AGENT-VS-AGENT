@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using static Utils;
 using UnityEngine;
 
 public class ObstacleAvoidanceBehavior : IMovementBehaviour
 {
     private Vector3 lastAvoidanceDirection = Vector3.zero;
     private float avoidanceTimer = 0f;
-    private const float avoidanceDuration = 0.2f; // Segundos que mantiene la evasión
+    private const float avoidanceDuration = 0.2f;
 
     public Vector3 CalculateSteeringVelocity(NPC npc)
     {
@@ -16,7 +15,7 @@ public class ObstacleAvoidanceBehavior : IMovementBehaviour
         if (dir == "Left")
         {
             lastAvoidanceDirection = npc.transform.right;
-            avoidanceTimer = avoidanceDuration; // Resetea el temporizador
+            avoidanceTimer = avoidanceDuration;
         }
         else if (dir == "Right")
         {

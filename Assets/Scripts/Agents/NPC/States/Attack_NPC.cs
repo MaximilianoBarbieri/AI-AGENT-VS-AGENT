@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static Utils;
 
 public class Attack_NPC : State
 {
     private NPC _npc;
+    private float _currentCd = 0;
 
     public Attack_NPC(NPC npc)
     {
@@ -13,15 +13,30 @@ public class Attack_NPC : State
 
     public override void OnEnter()
     {
+        Debug.Log("ON ENTER - ATTACK STATE - NPC");
+        _npc.attackFXRenderer.enabled = true;
+
+        _npc.attackFXRenderer.SetPosition(0, _npc.transform.position);
+        _npc.attackFXRenderer.SetPosition(1, _npc.currentEnemy.transform.position);
+
+        _npc.currentEnemy.TakeDamage(NPC_DAMAGE);
     }
 
     public override void OnUpdate()
     {
+        _currentCd += Time.deltaTime;
+
+        if (_currentCd >= NPC_CD_ATTACK_ORIG)
+            _npc.stateMachine.ChangeState(NPCState.Await);
+
         if (_npc.Health <= 25)
             _npc.stateMachine.ChangeState(NPCState.Escape);
     }
 
     public override void OnExit()
     {
+        Debug.Log("ON EXIT - ATTACK STATE - NPC");
+        _npc.attackFXRenderer.enabled = false;
+        _currentCd = 0;
     }
 }
