@@ -12,15 +12,10 @@ public class Await_NPC : State
 
     public override void OnEnter()
     {
-        Debug.Log("ON ENTER AWAIT");
-        _npc.MoveSpeed = NPC_AWAIT_MOVE_SPEED;
     }
 
     public override void OnUpdate()
     {
-        Debug.Log("UPDATE AWAIT - NPC");
-        
-        
         if (_npc.Health <= NPC_MIN_HEALTH_TO_RECOVERY)
             stateMachine.ChangeState(NPCState.Escape);
 
@@ -35,6 +30,5 @@ public class Await_NPC : State
 
     public override void OnExit()
     {
-        _npc.MoveSpeed = NPC_ORIGINAL_MOVE_SPEED;
     }
 }

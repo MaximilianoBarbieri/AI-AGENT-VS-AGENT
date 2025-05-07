@@ -24,7 +24,5 @@ public class Recovery_NPC : State
     public override void OnExit()
     {
         _npc.Health = NPC_MAX_HEALTH;
-
-        //_npc.SetTargetNode(_npc.leader.GetCurrentNode());
     }
 }

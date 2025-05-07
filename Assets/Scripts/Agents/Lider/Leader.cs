@@ -51,8 +51,7 @@ public class Leader : Entity
             }
         }
     }
-
-
+    
     public override bool HasLineOfSight()
     {
         Vector3 origin = transform.position + Vector3.up * 0.5f;

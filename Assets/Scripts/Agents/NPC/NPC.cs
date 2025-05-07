@@ -63,7 +63,7 @@ public class NPC : Entity
             foreach (var behavior in _flocking)
                 movement += behavior.CalculateSteeringVelocity(this);
 
-        Velocity = new Vector3(movement.x, 0, movement.z).normalized * MoveSpeed;
+        Velocity = new Vector3(movement.x, 0, movement.z).normalized * NPC_ORIGINAL_MOVE_SPEED;
         transform.position += Velocity * Time.deltaTime;
 
         if (Velocity.magnitude > 0.1f)

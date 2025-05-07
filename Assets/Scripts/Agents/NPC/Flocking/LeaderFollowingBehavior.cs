@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Utils;
 
 public class LeaderFollowingBehavior : IFlockingBehaviour
 {
@@ -15,7 +16,7 @@ public class LeaderFollowingBehavior : IFlockingBehaviour
         float slowingRadius = 3f;
         float speedFactor = Mathf.Clamp01(distance / slowingRadius);
 
-        Vector3 desiredVelocity = toLeader.normalized * npc.MoveSpeed * speedFactor;
+        Vector3 desiredVelocity = toLeader.normalized * NPC_ORIGINAL_MOVE_SPEED * speedFactor;
         return desiredVelocity * npc.leaderFollowWeight;
     }
 }

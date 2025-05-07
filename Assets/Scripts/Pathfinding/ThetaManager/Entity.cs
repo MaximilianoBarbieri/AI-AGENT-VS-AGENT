@@ -4,21 +4,19 @@ using static Utils;
 
 public abstract class Entity : MonoBehaviour, IThetaMovement
 {
-    public float Health = 100f;
+    public float Health { get; set; } = 100f;
     public Vector3 Velocity { get; set; }
-    public float MoveSpeed { get; set; }
-
+    
     public StateMachine stateMachine;
-
-    [SerializeField] protected LayerMask nodeLayer;
 
     public List<Node> path = new();
 
+    [Range(0, 5)] public float avoidWeight;
+
+    [SerializeField] protected LayerMask nodeLayer;
     [SerializeField] protected LayerMask _obstacleMask;
 
     protected ObstacleAvoidanceBehavior _obstacleAvoidance;
-
-    [Range(0, 5)] public float avoidWeight;
 
     public Node GetCurrentNode()
     {
@@ -44,7 +42,6 @@ public abstract class Entity : MonoBehaviour, IThetaMovement
 
         return closestNode;
     }
-
 
     public void MoveAlongPath(float moveSpeed)
     {
