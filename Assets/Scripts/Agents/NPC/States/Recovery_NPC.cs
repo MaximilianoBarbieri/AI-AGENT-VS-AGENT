@@ -15,7 +15,7 @@ public class Recovery_NPC : State
 
     public override void OnUpdate()
     {
-        if (_npc.Health < 100)
+        if (_npc.Health < NPC_MAX_HEALTH)
             _npc.Health += NPC_REGENERATION_LIFE;
         else
             _npc.stateMachine.ChangeState(NPCState.Await);
@@ -23,7 +23,8 @@ public class Recovery_NPC : State
 
     public override void OnExit()
     {
-        _npc.Health = 100;
-        _npc.SetTargetNode(_npc.leader.GetCurrentNode(), _npc.leader);
+        _npc.Health = NPC_MAX_HEALTH;
+
+        //_npc.SetTargetNode(_npc.leader.GetCurrentNode());
     }
 }

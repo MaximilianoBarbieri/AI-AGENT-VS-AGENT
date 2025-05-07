@@ -8,7 +8,7 @@ public class Node : MonoBehaviour
 
     private float rayLength = 2.5f;
     [SerializeField] private LayerMask nodeLayer;
-    
+
     [SerializeField] private bool _onDrawGizmos;
 
     private void Start() => FindConnections();
@@ -35,11 +35,10 @@ public class Node : MonoBehaviour
 
             if (Physics.Raycast(transform.position, direction, out hit, rayLength))
             {
-
                 if ((nodeLayer.value & (1 << hit.collider.gameObject.layer)) == 0)
                 {
-                    Debug.Log($"Objeto detectado fuera de NodeLayer: {hit.collider.name}");
-                    continue; 
+//                    Debug.Log($"Objeto detectado fuera de NodeLayer: {hit.collider.name}");
+                    continue;
                 }
 
                 Node neighbor = hit.collider.GetComponent<Node>();
@@ -48,7 +47,7 @@ public class Node : MonoBehaviour
                 if (neighbor != null && neighbor != this)
                 {
                     connections.Add(neighbor);
-                    Debug.Log($"Nodo conectado: {neighbor.name}");
+                    //   Debug.Log($"Nodo conectado: {neighbor.name}");
                 }
             }
         }

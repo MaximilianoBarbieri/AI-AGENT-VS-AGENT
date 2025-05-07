@@ -4,7 +4,7 @@ using static Utils;
 public class Walk_NPC : State
 {
     private NPC _npc;
-    private bool _inVisionRange;
+    private Node _currentTargetNode;
 
     public Walk_NPC(NPC npc)
     {
@@ -13,26 +13,39 @@ public class Walk_NPC : State
 
     public override void OnEnter()
     {
+        _currentTargetNode = _npc.leader.GetCurrentNode();
+
+        _npc.path = ThetaManager.FindPath(_npc.GetCurrentNode(), _currentTargetNode);
     }
 
     public override void OnUpdate()
     {
+        Debug.Log("WALK NPC");
+
         if (_npc.HasLineOfSight())
             _npc.Flocking();
         else
-            _npc.MoveAlongPath(_npc.MoveSpeed);
+            RecalculatedPath();
 
-        if (Vector3.Distance(_npc.transform.position, _npc.leaderPos.position) <= _npc.minDistanceLeader)
+        if (Vector3.Distance(_npc.transform.position, _npc.LeaderPos.position) <= _npc.minDistanceLeader)
             _npc.stateMachine.ChangeState(NPCState.Await);
 
         if (_npc.PatrolWithFoV() != null)
             _npc.stateMachine.ChangeState(NPCState.Attack);
-
-        if (_npc.Health <= 25)
-            _npc.stateMachine.ChangeState(NPCState.Escape);
     }
 
     public override void OnExit()
     {
+    }
+
+    private void RecalculatedPath()
+    {
+        if (_currentTargetNode != _npc.leader.GetCurrentNode())
+        {
+            _currentTargetNode = _npc.leader.GetCurrentNode();
+            _npc.path = ThetaManager.FindPath(_npc.GetCurrentNode(), _currentTargetNode);
+        }
+
+        _npc.MoveAlongPath(NPC_ORIGINAL_MOVE_SPEED);
     }
 }

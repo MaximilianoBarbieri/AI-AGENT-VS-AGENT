@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public interface IFlockingBehaviour : IMovementBehaviour
+public interface IFlockingBehaviour
 {
+    Vector3 CalculateSteeringVelocity(NPC npc);
 }

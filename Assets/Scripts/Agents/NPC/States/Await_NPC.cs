@@ -12,23 +12,25 @@ public class Await_NPC : State
 
     public override void OnEnter()
     {
+        Debug.Log("ON ENTER AWAIT");
         _npc.MoveSpeed = NPC_AWAIT_MOVE_SPEED;
     }
 
     public override void OnUpdate()
     {
-        float distToLeader = Vector3.Distance(_npc.transform.position, _npc.leaderPos.position);
+        Debug.Log("UPDATE AWAIT - NPC");
+        
+        
+        if (_npc.Health <= NPC_MIN_HEALTH_TO_RECOVERY)
+            stateMachine.ChangeState(NPCState.Escape);
+
+        float distToLeader = Vector3.Distance(_npc.transform.position, _npc.LeaderPos.position);
 
         if (distToLeader > _npc.minDistanceLeader)
             _npc.stateMachine.ChangeState(NPCState.Walk);
-        else if (distToLeader <= _npc.minDistanceLeader)
-            _npc.Flocking();
 
         if (_npc.PatrolWithFoV() != null)
             _npc.stateMachine.ChangeState(NPCState.Attack);
-
-        if (_npc.Health <= 25)
-            _npc.stateMachine.ChangeState(NPCState.Escape);
     }
 
     public override void OnExit()

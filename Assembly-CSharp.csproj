@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\SeparationBehavior.cs" />
-     <Compile Include="Assets\Scripts\Agents\IMovementBehaviour.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Attack_NPC.cs" />
      <Compile Include="Assets\Scripts\StateMachine\State.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\States\Recovery_NPC.cs" />
@@ -72,6 +71,7 @@
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\AlignmentBehavior.cs" />
      <Compile Include="Assets\Scripts\Agents\NPC\Flocking\LeaderFollowingBehavior.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets\Prefabs\Team A" />
      <Folder Include="Assets\Scripts\Pathfinding" />
      <Folder Include="Assets\Scripts\Agents\NPC\Flocking" />
      <Folder Include="Assets\Scripts\Agents\NPC\States" />
@@ -81,8 +81,10 @@
      <Folder Include="Assets\Scripts\StateMachine" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Art" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Scripts\Agents\NPC" />
      <Folder Include="Assets\Art\Material" />
+     <Folder Include="Assets\Prefabs\Team B" />
      <Folder Include="Assets\Scripts\Pathfinding\ThetaManager" />
      <Folder Include="Assets\Scripts\Agents\Lider\States" />
      <Reference Include="UnityEngine">

@@ -13,7 +13,6 @@ public class Attack_Leader : State
 
     public override void OnEnter()
     {
-        Debug.Log("ON ENTER DE ATTACK" + _leader.myTeam.ToString());
         Attack();
     }
 

@@ -4,17 +4,12 @@ using static Utils;
 public class Leader : Entity
 {
     [SerializeField] public Team myTeam;
-
-    public float Health { get; set; } = 100f;
+    public Vector3 DirectTargetPos { get; private set; }
 
     public bool useMove;
     public bool useTheta;
 
-    public StateMachine stateMachine;
-
     public Node safeZone;
-    public Vector3 directTargetPos;
-    public ObstacleAvoidanceBehavior ObstacleAvoidanceBehavior;
 
     private void Start()
     {
@@ -25,6 +20,8 @@ public class Leader : Entity
         stateMachine.AddState(LeaderState.Attack, new Attack_Leader(this));
 
         stateMachine.ChangeState(LeaderState.Await);
+
+        _obstacleAvoidance = new ObstacleAvoidanceBehavior();
     }
 
     private void Update()
@@ -39,21 +36,18 @@ public class Leader : Entity
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            directTargetPos = hit.point;
+            DirectTargetPos = hit.point;
 
             bool hasSight = HasLineOfSight();
-            Debug.Log("¿Hay línea de visión directa? " + hasSight);
 
             Node node = hit.collider.GetComponent<Node>();
 
-            if (node != null)
+            if (hasSight)
+                useMove = true;
+            else if (node != null)
             {
-                OnSetTargetNode?.Invoke(node, this);
-
-                if (hasSight)
-                    useMove = true;
-                else if (targetNode != null)
-                    useTheta = true;
+                path = ThetaManager.FindPath(GetCurrentNode(), node);
+                useTheta = true;
             }
         }
     }
@@ -62,7 +56,7 @@ public class Leader : Entity
     public override bool HasLineOfSight()
     {
         Vector3 origin = transform.position + Vector3.up * 0.5f;
-        Vector3 direction = directTargetPos - origin;
+        Vector3 direction = DirectTargetPos - origin;
         float distance = direction.magnitude;
 
         return !Physics.Raycast(origin, direction.normalized, distance, _obstacleMask);
@@ -70,41 +64,18 @@ public class Leader : Entity
 
     public void Move()
     {
-        string result = ObstacleAvoidance();
+        Vector3 movement = Vector3.zero;
 
-        if (result == "None")
-        {
-            Vector3 direction = (directTargetPos - transform.position).normalized;
-            transform.position += direction * LEADER_MOVE_SPEED * Time.deltaTime;
-            transform.LookAt(directTargetPos);
-        }
-    }
+        Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
 
-    public override string ObstacleAvoidance()
-    {
-        return "None";
-    }
+        if (obstacleAvoidance.magnitude > 0.1f)
+            movement = obstacleAvoidance;
+        else
+            movement = DirectTargetPos - transform.position;
 
-    public override void TakeDamage(int dmg)
-    {
-        Health -= dmg;
+        Velocity = movement.normalized * LEADER_MOVE_SPEED;
+        transform.position += Velocity * Time.deltaTime;
 
-        if (Health <= 0)
-            Destroy(gameObject);
-    }
-
-    public override bool ShouldReactToLeader(Leader clickedLeader)
-    {
-        return clickedLeader == this;
-    }
-
-    private void OnEnable()
-    {
-        OnSetTargetNode += SetTargetNode;
-    }
-
-    private void OnDisable()
-    {
-        OnSetTargetNode -= SetTargetNode;
+        transform.LookAt(DirectTargetPos);
     }
 }

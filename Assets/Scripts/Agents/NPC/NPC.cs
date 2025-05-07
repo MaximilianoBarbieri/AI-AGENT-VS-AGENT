@@ -4,33 +4,26 @@ using static Utils;
 
 public class NPC : Entity
 {
-    public float Health { get; set; } = 100f;
-    public Vector3 Velocity { get; private set; }
-    public List<NPC> Neighbors { get; private set; } = new();
-
-    public float MoveSpeed { get; set; } = NPC_ORIGINAL_MOVE_SPEED;
-
-    public NPC currentEnemy;
-
-    [Header("Flocking Properties")] private List<IMovementBehaviour> _behaviors;
-
-    public Transform leaderPos;
     public Leader leader;
+    public List<NPC> Neighbors { get; private set; } = new();
+    public NPC CurrentEnemy { get; private set; }
+    public Transform LeaderPos { get; private set; }
+
+    [Header("Flocking Properties")] private List<IFlockingBehaviour> _flocking;
 
     [Range(0, 5)] public float cohesionWeight = 1.0f;
     [Range(0, 5)] public float alignmentWeight = 1.0f;
     [Range(0, 5)] public float separationWeight = 1.5f;
     [Range(0, 5)] public float separationDistance = 2.0f;
+
     [Range(0, 5)] public float leaderFollowWeight = 1.5f;
     [Range(0, 5)] public float minDistanceLeader = 1f;
-    [Range(0, 5)] public float avoidWeight = 1.5f;
-
+    
     public LineRenderer attackFXRenderer;
-    public StateMachine stateMachine;
 
     private void Start()
     {
-        leaderPos = leader.transform;
+        LeaderPos = leader.transform;
 
         attackFXRenderer = GetComponent<LineRenderer>();
 
@@ -45,14 +38,15 @@ public class NPC : Entity
 
         stateMachine.ChangeState(NPCState.Await);
 
-        _behaviors = new List<IMovementBehaviour>
+        _flocking = new List<IFlockingBehaviour>
         {
             new CohesionBehaviour(),
             new AlignmentBehavior(),
             new SeparationBehavior(),
             new LeaderFollowingBehavior(),
-            new ObstacleAvoidanceBehavior()
         };
+
+        _obstacleAvoidance = new ObstacleAvoidanceBehavior();
     }
 
     private void Update() => DetectNeighbors();
@@ -61,25 +55,15 @@ public class NPC : Entity
     {
         Vector3 movement = Vector3.zero;
 
-        Vector3 obstacleAvoidance = _behaviors
-            .Find(behavior => behavior is ObstacleAvoidanceBehavior)
-            ?.CalculateSteeringVelocity(this) ?? Vector3.zero;
+        Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
 
         if (obstacleAvoidance.magnitude > 0.1f)
-        {
             movement = obstacleAvoidance;
-        }
         else
-        {
-            foreach (var behavior in _behaviors)
-            {
-                if (behavior is ObstacleAvoidanceBehavior) continue;
-
+            foreach (var behavior in _flocking)
                 movement += behavior.CalculateSteeringVelocity(this);
-            }
-        }
 
-        Velocity = movement.normalized * MoveSpeed;
+        Velocity = new Vector3(movement.x, 0, movement.z).normalized * MoveSpeed;
         transform.position += Velocity * Time.deltaTime;
 
         if (Velocity.magnitude > 0.1f)
@@ -115,96 +99,92 @@ public class NPC : Entity
         NPC closestEnemy = null;
         int layerMask = ~(1 << nodeLayer);
 
-        foreach (var col in Physics.OverlapSphere(transform.position, NPC_VIEWRADIUS))
+        Collider[] hits = Physics.OverlapSphere(transform.position, NPC_VIEWRADIUS);
+
+        foreach (var col in hits)
         {
             NPC npc = col.GetComponent<NPC>();
+            if (npc == null || npc == this) continue;
 
-            if (npc == null || npc.leader.myTeam == leader.myTeam)
+            if (npc.leader.myTeam == leader.myTeam)
                 continue;
 
-            Vector3 dir = (npc.transform.position - transform.position).normalized;
+            Vector3 directionToTarget = (npc.transform.position - transform.position).normalized;
+            float angle = Vector3.Angle(transform.forward, directionToTarget);
 
-            if (Vector3.Angle(transform.forward, dir) <= NPC_VIEWANGLE / 2f)
+            if (angle > NPC_VIEWANGLE / 2f)
+                continue;
+
+            float distanceToTarget = Vector3.Distance(transform.position, npc.transform.position);
+
+            if (Physics.Raycast(transform.position + Vector3.up * 0.5f, directionToTarget, out RaycastHit hit,
+                    distanceToTarget, layerMask))
             {
-                float dist = Vector3.Distance(transform.position, npc.transform.position);
+                if (hit.collider.gameObject != npc.gameObject)
+                    continue;
+            }
 
-                if (Physics.Raycast(transform.position, dir, out RaycastHit hit, NPC_VIEWRADIUS, layerMask))
-                    if (hit.collider.gameObject != npc.gameObject)
-                        continue;
-
-                if (dist < minDist)
-                {
-                    minDist = dist;
-                    closestEnemy = npc;
-                }
+            if (distanceToTarget < minDist)
+            {
+                minDist = distanceToTarget;
+                closestEnemy = npc;
             }
         }
 
-        currentEnemy = closestEnemy;
+        CurrentEnemy = closestEnemy;
 
-        if (currentEnemy != null)
-            Debug.Log("¡Enemigo más cercano en el FoV: " + currentEnemy.name + "!");
+        if (CurrentEnemy != null)
+            Debug.Log("¡Enemigo más cercano en el FoV: " + CurrentEnemy.name + "!");
 
-        return currentEnemy;
+        return CurrentEnemy;
     }
 
     public override bool HasLineOfSight()
     {
         Vector3 origin = transform.position + Vector3.up * 0.5f;
-        Vector3 directionToTarget = (leaderPos.position - transform.position).normalized;
-        float maxDistance = Vector3.Distance(transform.position, leaderPos.position);
+        Vector3 directionToTarget = (LeaderPos.position - transform.position).normalized;
+        float maxDistance = Vector3.Distance(transform.position, LeaderPos.position);
 
         return !Physics.Raycast(origin, directionToTarget.normalized, maxDistance, _obstacleMask);
     }
 
-    public override string ObstacleAvoidance()
-    {
-        Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
-        Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
-
-        bool leftHit = Physics.Raycast(leftRayOrigin, transform.forward, NPC_DISTANCE_OBSTACLE_AVOIDANCE,
-            _obstacleMask);
-        bool rightHit = Physics.Raycast(rightRayOrigin, transform.forward, NPC_DISTANCE_OBSTACLE_AVOIDANCE,
-            _obstacleMask);
-
-        return leftHit ? "Left" : rightHit ? "Right" : "None";
-    }
-
-    public override void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         Health -= dmg;
-
+        
         if (Health <= 0)
             Destroy(gameObject);
     }
 
-    public override bool ShouldReactToLeader(Leader clickedLeader)
-    {
-        return clickedLeader == leader;
-    }
-
-    private void OnEnable()
-    {
-        OnSetTargetNode += SetTargetNode;
-    }
-
-    private void OnDisable()
-    {
-        OnSetTargetNode -= SetTargetNode;
-    }
-
     private void OnDrawGizmos()
     {
-        if (leaderPos != null)
+        Vector3 pos = transform.position;
+        Vector3 forward = transform.forward;
+
+        float halfAngle = NPC_VIEWANGLE / 2f;
+        Vector3 leftDir = Quaternion.Euler(0, -halfAngle, 0) * forward;
+        Vector3 rightDir = Quaternion.Euler(0, halfAngle, 0) * forward;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawRay(pos, leftDir * NPC_VIEWRADIUS);
+        Gizmos.DrawRay(pos, rightDir * NPC_VIEWRADIUS);
+
+        // Línea al enemigo actual si existe
+        if (CurrentEnemy != null)
         {
-            Vector3 origin = transform.position + Vector3.up * 0.5f;
-            Vector3 directionToTarget = (leaderPos.position - transform.position).normalized;
-            float maxDistance = Vector3.Distance(transform.position, leaderPos.position);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(pos + Vector3.up * 0.5f, CurrentEnemy.transform.position + Vector3.up * 0.5f);
+        }
 
-            bool hasLOS = !Physics.Raycast(origin, directionToTarget.normalized, maxDistance, _obstacleMask);
+        // Línea al líder, verde si tiene LoS, roja si no
+        if (LeaderPos != null)
+        {
+            Vector3 origin = pos + Vector3.up * 0.5f;
+            Vector3 dirToLeader = (LeaderPos.position - pos).normalized;
+            float distToLeader = Vector3.Distance(pos, LeaderPos.position);
 
-            Gizmos.color = hasLOS ? Color.green : Color.red;
-            Gizmos.DrawLine(transform.position, leaderPos.position);
+            Gizmos.color = HasLineOfSight() ? Color.green : Color.red;
+            Gizmos.DrawRay(origin, dirToLeader * distToLeader);
         }
     }
 }

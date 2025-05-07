@@ -12,13 +12,13 @@ public class Escape_NPC : State
 
     public override void OnEnter()
     {
-        _npc.SetTargetNode(_npc.leader.safeZone, _npc.leader);
+        _npc.path = ThetaManager.FindPath(_npc.GetCurrentNode(), _npc.leader.safeZone);
     }
 
     public override void OnUpdate()
     {
         if (Vector3.Distance(_npc.transform.position, _npc.leader.safeZone.transform.position) > 0.1f)
-            _npc.MoveAlongPath(_npc.MoveSpeed);
+            _npc.MoveAlongPath(NPC_RECOVERY_MOVE_SPEED);
         else
             _npc.stateMachine.ChangeState(NPCState.Recovery);
     }

@@ -18,8 +18,8 @@ public class ThetaManager : MonoBehaviour
         Dictionary<Node, float> gScore = new Dictionary<Node, float>();
         Dictionary<Node, float> fScore = new Dictionary<Node, float>();
 
-        gScore[startNode] = 0;
-        fScore[startNode] = Vector3.Distance(startNode.transform.position, targetNode.transform.position);
+        gScore[startNode] = 0f;
+        fScore[startNode] = Heuristic(startNode, targetNode);
         openSet.Enqueue(startNode, fScore[startNode]);
 
         while (openSet.Count > 0)
@@ -37,47 +37,45 @@ public class ThetaManager : MonoBehaviour
                     continue;
 
                 Node parent = cameFrom.ContainsKey(current) ? cameFrom[current] : current;
+                float tentativeG;
+                Node tentativeParent;
 
                 if (HasLineOfSight(parent, neighbor))
                 {
-                    float newG = gScore[parent] + Vector3.Distance(parent.transform.position, neighbor.transform.position);
-
-                    if (!gScore.ContainsKey(neighbor) || newG < gScore[neighbor])
-                    {
-                        cameFrom[neighbor] = parent;
-                        gScore[neighbor] = newG;
-                        fScore[neighbor] = newG + Vector3.Distance(neighbor.transform.position, targetNode.transform.position);
-
-                        if (!openSet.Contains(neighbor))
-                            openSet.Enqueue(neighbor, fScore[neighbor]);
-                    }
+                    tentativeParent = parent;
+                    tentativeG = gScore[parent] + Heuristic(parent, neighbor);
                 }
                 else
                 {
-                    float newG = gScore[current] + Vector3.Distance(current.transform.position, neighbor.transform.position);
+                    tentativeParent = current;
+                    tentativeG = gScore[current] + Heuristic(current, neighbor);
+                }
 
-                    if (!gScore.ContainsKey(neighbor) || newG < gScore[neighbor])
-                    {
-                        cameFrom[neighbor] = current;
-                        gScore[neighbor] = newG;
-                        fScore[neighbor] = newG + Vector3.Distance(neighbor.transform.position, targetNode.transform.position);
+                if (!gScore.ContainsKey(neighbor) || tentativeG < gScore[neighbor])
+                {
+                    cameFrom[neighbor] = tentativeParent;
+                    gScore[neighbor] = tentativeG;
+                    fScore[neighbor] = tentativeG + Heuristic(neighbor, targetNode);
 
-                        if (!openSet.Contains(neighbor))
-                            openSet.Enqueue(neighbor, fScore[neighbor]);
-                    }
+                    if (!openSet.Contains(neighbor))
+                        openSet.Enqueue(neighbor, fScore[neighbor]);
                 }
             }
         }
 
-        return new List<Node>();
+        return new List<Node>(); // No path found
+    }
+
+    private static float Heuristic(Node a, Node b)
+    {
+        return Vector3.Distance(a.transform.position, b.transform.position);
     }
 
     private static bool HasLineOfSight(Node from, Node to)
     {
-        Vector3 direction = to.transform.position - from.transform.position;
-        float distance = direction.magnitude;
-
-        return !Physics.Raycast(from.transform.position, direction.normalized, distance);
+        Vector3 dir = to.transform.position - from.transform.position;
+        float dist = dir.magnitude;
+        return !Physics.Raycast(from.transform.position, dir.normalized, dist);
     }
 
     private static List<Node> ReconstructPath(Dictionary<Node, Node> cameFrom, Node current)

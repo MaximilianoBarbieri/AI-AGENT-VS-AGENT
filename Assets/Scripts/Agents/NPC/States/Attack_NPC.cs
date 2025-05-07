@@ -16,20 +16,26 @@ public class Attack_NPC : State
         _npc.attackFXRenderer.enabled = true;
 
         _npc.attackFXRenderer.SetPosition(0, _npc.transform.position);
-        _npc.attackFXRenderer.SetPosition(1, _npc.currentEnemy.transform.position);
+        _npc.attackFXRenderer.SetPosition(1, _npc.CurrentEnemy.transform.position);
 
-        _npc.currentEnemy.TakeDamage(NPC_DAMAGE);
+        _npc.CurrentEnemy.TakeDamage(NPC_DAMAGE);
     }
 
     public override void OnUpdate()
     {
+        if (_npc.Health <= NPC_MIN_HEALTH_TO_RECOVERY)
+        {
+            _npc.stateMachine.ChangeState(NPCState.Escape);
+            return;
+        }
+
         _currentCd += Time.deltaTime;
+
+        if (_npc.CurrentEnemy != null)
+            _npc.transform.LookAt(_npc.CurrentEnemy.transform);
 
         if (_currentCd >= NPC_CD_ATTACK_ORIG)
             _npc.stateMachine.ChangeState(NPCState.Await);
-
-        if (_npc.Health <= 25)
-            _npc.stateMachine.ChangeState(NPCState.Escape);
     }
 
     public override void OnExit()

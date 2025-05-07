@@ -1,43 +1,52 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using static Utils;
 
 public abstract class Entity : MonoBehaviour, IThetaMovement
 {
+    public float Health = 100f;
+    public Vector3 Velocity { get; set; }
+    public float MoveSpeed { get; set; }
+
+    public StateMachine stateMachine;
+
     [SerializeField] protected LayerMask nodeLayer;
 
-    [HideInInspector] public List<Node> path = new();
-    [HideInInspector] public Node startNode;
-    [HideInInspector] public Node targetNode;
+    public List<Node> path = new();
 
     [SerializeField] protected LayerMask _obstacleMask;
-    
-    public static Action<Node, Leader> OnSetTargetNode;
+
+    protected ObstacleAvoidanceBehavior _obstacleAvoidance;
+
+    [Range(0, 5)] public float avoidWeight;
 
     public Node GetCurrentNode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, nodeLayer);
+
+        Node closestNode = null;
+        float shortestDistance = Mathf.Infinity;
+
         foreach (var col in colliders)
         {
             Node node = col.GetComponent<Node>();
-            if (node != null) return node;
+
+            if (node != null)
+            {
+                float distance = Vector3.Distance(transform.position, node.transform.position);
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    closestNode = node;
+                }
+            }
         }
 
-        return null;
+        return closestNode;
     }
 
-    public void SetTargetNode(Node tNode, Leader clickedLeader)
-    {
-        if (!ShouldReactToLeader(clickedLeader))
-            return;
 
-        startNode = GetCurrentNode();
-        targetNode = tNode;
-        path = ThetaManager.FindPath(startNode, targetNode);
-    }
-
-    public virtual void MoveAlongPath(float moveSpeed)
+    public void MoveAlongPath(float moveSpeed)
     {
         if (path.Count == 0) return;
 
@@ -46,14 +55,21 @@ public abstract class Entity : MonoBehaviour, IThetaMovement
         transform.LookAt(path[0].transform.position);
 
         if (Vector3.Distance(transform.position, path[0].transform.position) < 0.1f)
-        {
             path.RemoveAt(0);
-        }
+    }
+
+    public string ObstacleAvoidance()
+    {
+        Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
+        Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
+
+        bool leftHit = Physics.Raycast(leftRayOrigin, transform.forward, DISTANCE_OBSTACLE_AVOIDANCE,
+            _obstacleMask);
+        bool rightHit = Physics.Raycast(rightRayOrigin, transform.forward, DISTANCE_OBSTACLE_AVOIDANCE,
+            _obstacleMask);
+
+        return leftHit ? LEFT_DIR : rightHit ? RIGHT_DIR : NONE_OBSTACLE;
     }
 
     public abstract bool HasLineOfSight();
-    public abstract string ObstacleAvoidance();
-    public abstract void TakeDamage(int dmg);
-    
-    public abstract bool ShouldReactToLeader(Leader clickedLeader);
 }

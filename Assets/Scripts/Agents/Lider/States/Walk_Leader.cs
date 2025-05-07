@@ -19,10 +19,10 @@ public class Walk_Leader : State
     {
         if (_leader.useMove)
             _leader.Move();
-        else if (_leader.useTheta && _leader.targetNode != null)
+        else if (_leader.useTheta)
             _leader.MoveAlongPath(LEADER_MOVE_SPEED);
 
-        if (Vector3.Distance(_leader.transform.position, _leader.directTargetPos) <= 0.1f)
+        if (Vector3.Distance(_leader.transform.position, _leader.DirectTargetPos) <= 0.1f)
             stateMachine.ChangeState(LeaderState.Await);
     }
 

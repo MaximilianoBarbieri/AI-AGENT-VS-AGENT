@@ -1,31 +1,31 @@
 using static Utils;
 using UnityEngine;
 
-public class ObstacleAvoidanceBehavior : IMovementBehaviour
+public class ObstacleAvoidanceBehavior
 {
     private Vector3 lastAvoidanceDirection = Vector3.zero;
     private float avoidanceTimer = 0f;
     private const float avoidanceDuration = 0.2f;
 
-    public Vector3 CalculateSteeringVelocity(NPC npc)
+    public Vector3 CalculateSteeringVelocity(Entity entity)
     {
         Vector3 avoidanceForce = Vector3.zero;
-        var dir = npc.ObstacleAvoidance();
+        var dir = entity.ObstacleAvoidance();
 
-        if (dir == "Left")
+        if (dir == LEFT_DIR)
         {
-            lastAvoidanceDirection = npc.transform.right;
+            lastAvoidanceDirection = entity.transform.right;
             avoidanceTimer = avoidanceDuration;
         }
-        else if (dir == "Right")
+        else if (dir == RIGHT_DIR)
         {
-            lastAvoidanceDirection = -npc.transform.right;
+            lastAvoidanceDirection = -entity.transform.right;
             avoidanceTimer = avoidanceDuration;
         }
 
         if (avoidanceTimer > 0)
         {
-            avoidanceForce = lastAvoidanceDirection * npc.avoidWeight;
+            avoidanceForce = lastAvoidanceDirection * entity.avoidWeight;
             avoidanceTimer -= Time.deltaTime;
         }
 
