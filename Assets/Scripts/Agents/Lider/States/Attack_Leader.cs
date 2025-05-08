@@ -31,7 +31,7 @@ public class Attack_Leader : State
 
     private void Attack()
     {
-        Collider[] hits = Physics.OverlapSphere(_leader.transform.position, LEADER_RADIUS_ATTACK);
+        Collider[] hits = Physics.OverlapSphere(_leader.transform.position, LEADER_VIEW_RADIUS);
 
         foreach (var hit in hits)
         {

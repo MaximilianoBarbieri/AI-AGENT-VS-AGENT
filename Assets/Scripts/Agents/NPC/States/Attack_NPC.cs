@@ -31,9 +31,6 @@ public class Attack_NPC : State
 
         _currentCd += Time.deltaTime;
 
-        if (_npc.CurrentEnemy != null)
-            _npc.transform.LookAt(_npc.CurrentEnemy.transform);
-
         if (_currentCd >= NPC_CD_ATTACK_ORIG)
             _npc.stateMachine.ChangeState(NPCState.Await);
     }

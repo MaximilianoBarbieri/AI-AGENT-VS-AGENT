@@ -6,10 +6,16 @@ public class Leader : Entity
     [SerializeField] public Team myTeam;
     public Vector3 DirectTargetPos { get; private set; }
 
-    public bool useMove;
+    [Header("MOVE")] public bool useMove;
     public bool useTheta;
 
     public Node safeZone;
+
+    public Leader()
+    {
+        MaxSpeed = LEADER_MOVE_SPEED;
+        ViewRadius = LEADER_VIEW_RADIUS;
+    }
 
     private void Start()
     {
@@ -30,15 +36,33 @@ public class Leader : Entity
             ChoosingNewGoal();
     }
 
+    public override void Move()
+    {
+        Vector3 steering = Seek(DirectTargetPos);
+
+        Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
+
+        if (obstacleAvoidance.magnitude > 0.1f)
+            steering = obstacleAvoidance;
+
+        Velocity += steering;
+        Velocity = Vector3.ClampMagnitude(Velocity, MaxSpeed);
+
+        transform.position += Velocity * Time.deltaTime;
+
+        if (Velocity.sqrMagnitude > 0.01f)
+            transform.forward = Velocity.normalized;
+    }
+
     private void ChoosingNewGoal()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            DirectTargetPos = hit.point;
+            DirectTargetPos = new Vector3(hit.point.x, 0, hit.point.z);
 
-            bool hasSight = HasLineOfSight();
+            bool hasSight = HasLineOfSight(DirectTargetPos);
 
             Node node = hit.collider.GetComponent<Node>();
 
@@ -50,31 +74,5 @@ public class Leader : Entity
                 useTheta = true;
             }
         }
-    }
-    
-    public override bool HasLineOfSight()
-    {
-        Vector3 origin = transform.position + Vector3.up * 0.5f;
-        Vector3 direction = DirectTargetPos - origin;
-        float distance = direction.magnitude;
-
-        return !Physics.Raycast(origin, direction.normalized, distance, _obstacleMask);
-    }
-
-    public void Move()
-    {
-        Vector3 movement = Vector3.zero;
-
-        Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
-
-        if (obstacleAvoidance.magnitude > 0.1f)
-            movement = obstacleAvoidance;
-        else
-            movement = DirectTargetPos - transform.position;
-
-        Velocity = movement.normalized * LEADER_MOVE_SPEED;
-        transform.position += Velocity * Time.deltaTime;
-
-        transform.LookAt(DirectTargetPos);
     }
 }

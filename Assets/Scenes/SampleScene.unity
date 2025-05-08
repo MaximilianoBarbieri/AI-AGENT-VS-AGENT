@@ -243,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -368,7 +367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -493,7 +491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -618,7 +615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -743,7 +739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -868,7 +863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1098,7 +1092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1223,7 +1216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1348,7 +1340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1473,7 +1464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1598,7 +1588,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1723,7 +1712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1848,7 +1836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1973,7 +1960,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2098,7 +2084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2223,7 +2208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2302,7 +2286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141035021673015969, guid: f764134759d8c364f863a84d316a65cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2429,7 +2413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2554,7 +2537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2679,7 +2661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2804,7 +2785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2929,7 +2909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3054,7 +3033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3179,7 +3157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3304,7 +3281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3429,7 +3405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3554,7 +3529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3582,6 +3556,10 @@ PrefabInstance:
       propertyPath: leader
       value: 
       objectReference: {fileID: 1186224164}
+    - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
+      propertyPath: avoidWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: cohesionWeight
       value: 2
@@ -3648,7 +3626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624325089521434395, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3775,7 +3753,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3900,7 +3877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4025,7 +4001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4150,7 +4125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4275,7 +4249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4400,7 +4373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4525,7 +4497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4650,7 +4621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4775,7 +4745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4792,6 +4761,10 @@ PrefabInstance:
       propertyPath: leader
       value: 
       objectReference: {fileID: 1186224164}
+    - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
+      propertyPath: avoidWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: cohesionWeight
       value: 2
@@ -4858,7 +4831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624325089521434395, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4985,7 +4958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5215,7 +5187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5340,7 +5311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5465,7 +5435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5590,7 +5559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5715,7 +5683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5840,7 +5807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5965,7 +5931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6090,7 +6055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6215,7 +6179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6434,7 +6397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6559,7 +6521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6789,7 +6750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -6914,7 +6874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7039,7 +6998,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7164,7 +7122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7289,7 +7246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7414,7 +7370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7539,7 +7494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7664,7 +7618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7789,7 +7742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7949,7 +7901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8302,7 +8253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8532,7 +8482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8657,7 +8606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8782,7 +8730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -8907,7 +8854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9184,7 +9130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9309,7 +9254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9434,7 +9378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9559,7 +9502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9684,7 +9626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9809,7 +9750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9934,7 +9874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10059,7 +9998,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10219,7 +10157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10355,7 +10292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10480,7 +10416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10605,7 +10540,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10730,7 +10664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10809,7 +10742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141035021673015969, guid: f764134759d8c364f863a84d316a65cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10936,7 +10869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -10953,6 +10885,10 @@ PrefabInstance:
       propertyPath: leader
       value: 
       objectReference: {fileID: 1186224164}
+    - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
+      propertyPath: avoidWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: cohesionWeight
       value: 2
@@ -11019,7 +10955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624325089521434395, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11146,7 +11082,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11271,7 +11206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11455,7 +11389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141035021673015969, guid: f764134759d8c364f863a84d316a65cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11582,7 +11516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11812,7 +11745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -11937,7 +11869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12062,7 +11993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12187,7 +12117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12312,7 +12241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12437,7 +12365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12562,7 +12489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12792,7 +12718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -12917,7 +12842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13042,7 +12966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13198,7 +13121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13323,7 +13245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13448,7 +13369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13573,7 +13493,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13698,7 +13617,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13823,7 +13741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -13948,7 +13865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14073,7 +13989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14198,7 +14113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14323,7 +14237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14448,7 +14361,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14573,7 +14485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14698,7 +14609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -14715,6 +14625,10 @@ PrefabInstance:
       propertyPath: leader
       value: 
       objectReference: {fileID: 1186224164}
+    - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
+      propertyPath: avoidWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: cohesionWeight
       value: 2
@@ -14781,7 +14695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624325089521434395, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14908,7 +14822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15033,7 +14946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15158,7 +15070,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15283,7 +15194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15408,7 +15318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15533,7 +15442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15763,7 +15671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -15888,7 +15795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16013,7 +15919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16138,7 +16043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16263,7 +16167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16388,7 +16291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16513,7 +16415,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16638,7 +16539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16763,7 +16663,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16888,7 +16787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -16967,7 +16865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141035021673015969, guid: f764134759d8c364f863a84d316a65cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17094,7 +16992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17219,7 +17116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17344,7 +17240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
-  connectionRadius: 2.5
   nodeLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -17505,7 +17400,7 @@ PrefabInstance:
       objectReference: {fileID: 2009267986}
     - target: {fileID: 5888670755419940129, guid: af06f1e31dc19134aaf56a85497c8e23, type: 3}
       propertyPath: avoidWeight
-      value: 2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6091491557638941779, guid: af06f1e31dc19134aaf56a85497c8e23, type: 3}
       propertyPath: m_Name
@@ -17568,6 +17463,10 @@ PrefabInstance:
       propertyPath: leader
       value: 
       objectReference: {fileID: 1186224164}
+    - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
+      propertyPath: avoidWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526233556995464678, guid: be5bb250d2adc234cb56b428f0438371, type: 3}
       propertyPath: cohesionWeight
       value: 2

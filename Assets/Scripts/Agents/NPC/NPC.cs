@@ -8,8 +8,8 @@ public class NPC : Entity
     public List<NPC> Neighbors { get; private set; } = new();
     public NPC CurrentEnemy { get; private set; }
     public Transform LeaderPos { get; private set; }
-
-    [Header("Flocking Properties")] private List<IFlockingBehaviour> _flocking;
+    
+    [Header("FLOCKING PROPERTIES")] 
 
     [Range(0, 5)] public float cohesionWeight = 1.0f;
     [Range(0, 5)] public float alignmentWeight = 1.0f;
@@ -18,8 +18,18 @@ public class NPC : Entity
 
     [Range(0, 5)] public float leaderFollowWeight = 1.5f;
     [Range(0, 5)] public float minDistanceLeader = 1f;
+   
+    private List<IFlockingBehaviour> _flocking;
+
+    [Header("FX")]
     
     public LineRenderer attackFXRenderer;
+
+    public NPC()
+    {
+        MaxSpeed = NPC_ORIGINAL_MOVE_SPEED;
+        ViewRadius = NPC_VIEWRADIUS;
+    }
 
     private void Start()
     {
@@ -51,27 +61,30 @@ public class NPC : Entity
 
     private void Update() => DetectNeighbors();
 
-    public void Flocking()
+    public override void Move()
     {
-        Vector3 movement = Vector3.zero;
+        Vector3 steering = Vector3.zero;
 
         Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
-
+        
         if (obstacleAvoidance.magnitude > 0.1f)
-            movement = obstacleAvoidance;
+            steering = obstacleAvoidance;
         else
+        {
             foreach (var behavior in _flocking)
-                movement += behavior.CalculateSteeringVelocity(this);
+                steering += behavior.CalculateSteeringVelocity(this);
 
-        Velocity = new Vector3(movement.x, 0, movement.z).normalized * NPC_ORIGINAL_MOVE_SPEED;
+            Vector3 arriveToLeader = Arrive(leader.transform.position);
+            steering += arriveToLeader;
+        }
+
+        Velocity += steering;
+        Velocity = Vector3.ClampMagnitude(Velocity, MaxSpeed);
+        
         transform.position += Velocity * Time.deltaTime;
 
-        if (Velocity.magnitude > 0.1f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(Velocity);
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * NPC_ROTATION_SPEED);
-        }
+        if (Velocity.sqrMagnitude > 0.01f)
+            transform.forward = Velocity.normalized;
     }
 
     private void DetectNeighbors()
@@ -85,9 +98,7 @@ public class NPC : Entity
             NPC npc = col.GetComponent<NPC>();
 
             if (npc != null && npc != this)
-            {
                 newNeighbors.Add(npc);
-            }
         }
 
         Neighbors = new List<NPC>(newNeighbors);
@@ -139,52 +150,11 @@ public class NPC : Entity
         return CurrentEnemy;
     }
 
-    public override bool HasLineOfSight()
-    {
-        Vector3 origin = transform.position + Vector3.up * 0.5f;
-        Vector3 directionToTarget = (LeaderPos.position - transform.position).normalized;
-        float maxDistance = Vector3.Distance(transform.position, LeaderPos.position);
-
-        return !Physics.Raycast(origin, directionToTarget.normalized, maxDistance, _obstacleMask);
-    }
-
     public void TakeDamage(int dmg)
     {
         Health -= dmg;
-        
+
         if (Health <= 0)
             Destroy(gameObject);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 pos = transform.position;
-        Vector3 forward = transform.forward;
-
-        float halfAngle = NPC_VIEWANGLE / 2f;
-        Vector3 leftDir = Quaternion.Euler(0, -halfAngle, 0) * forward;
-        Vector3 rightDir = Quaternion.Euler(0, halfAngle, 0) * forward;
-
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawRay(pos, leftDir * NPC_VIEWRADIUS);
-        Gizmos.DrawRay(pos, rightDir * NPC_VIEWRADIUS);
-
-        // Línea al enemigo actual si existe
-        if (CurrentEnemy != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(pos + Vector3.up * 0.5f, CurrentEnemy.transform.position + Vector3.up * 0.5f);
-        }
-
-        // Línea al líder, verde si tiene LoS, roja si no
-        if (LeaderPos != null)
-        {
-            Vector3 origin = pos + Vector3.up * 0.5f;
-            Vector3 dirToLeader = (LeaderPos.position - pos).normalized;
-            float distToLeader = Vector3.Distance(pos, LeaderPos.position);
-
-            Gizmos.color = HasLineOfSight() ? Color.green : Color.red;
-            Gizmos.DrawRay(origin, dirToLeader * distToLeader);
-        }
     }
 }

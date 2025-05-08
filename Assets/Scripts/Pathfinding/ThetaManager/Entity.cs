@@ -6,16 +6,20 @@ public abstract class Entity : MonoBehaviour, IThetaMovement
 {
     public float Health { get; set; } = 100f;
     public Vector3 Velocity { get; set; }
-    
-    public StateMachine stateMachine;
+    protected float MaxSpeed { get; set; }
+    protected float ViewRadius { get; set; }
 
     public List<Node> path = new();
+    public StateMachine stateMachine;
 
-    [Range(0, 5)] public float avoidWeight;
-
+    [Header("LAYERS")] 
+    
     [SerializeField] protected LayerMask nodeLayer;
     [SerializeField] protected LayerMask _obstacleMask;
 
+    [Header("OBSTACLE AVOIDANCE")] 
+    
+    [Range(0, 5)]public float avoidWeight;
     protected ObstacleAvoidanceBehavior _obstacleAvoidance;
 
     public Node GetCurrentNode()
@@ -68,5 +72,39 @@ public abstract class Entity : MonoBehaviour, IThetaMovement
         return leftHit ? LEFT_DIR : rightHit ? RIGHT_DIR : NONE_OBSTACLE;
     }
 
-    public abstract bool HasLineOfSight();
+
+    protected Vector3 Seek(Vector3 targetPos) //MOVIMIENTO PARA LIDER
+    {
+        return Seek(targetPos, MaxSpeed);
+    }
+
+    private Vector3 Seek(Vector3 targetPos, float speed)
+    {
+        Vector3 desired = (targetPos - transform.position).normalized * speed;
+
+        Vector3 steering = desired - Velocity;
+
+        steering = Vector3.ClampMagnitude(steering, 3 * Time.deltaTime);
+
+        return steering;
+    }
+
+    protected Vector3 Arrive(Vector3 targetPos) //MOVIMIENTO DE NPC A LIDER
+    {
+        float dist = Vector3.Distance(transform.position, targetPos);
+        if (dist > ViewRadius) return Seek(targetPos);
+
+        return Seek(targetPos, MaxSpeed * (dist / ViewRadius));
+    }
+
+    public bool HasLineOfSight(Vector3 target)
+    {
+        Vector3 origin = transform.position + Vector3.up * 0.5f;
+        Vector3 direction = target - origin;
+        float distance = direction.magnitude;
+
+        return !Physics.Raycast(origin, direction.normalized, distance, _obstacleMask);
+    }
+
+    public abstract void Move();
 }

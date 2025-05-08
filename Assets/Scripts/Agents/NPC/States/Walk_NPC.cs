@@ -20,10 +20,8 @@ public class Walk_NPC : State
 
     public override void OnUpdate()
     {
-        Debug.Log("WALK NPC");
-
-        if (_npc.HasLineOfSight())
-            _npc.Flocking();
+        if (_npc.HasLineOfSight(_npc.LeaderPos.position))
+            _npc.Move();
         else
             RecalculatedPath();
 
