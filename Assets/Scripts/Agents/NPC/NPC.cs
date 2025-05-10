@@ -8,22 +8,20 @@ public class NPC : Entity
     public List<NPC> Neighbors { get; private set; } = new();
     public NPC CurrentEnemy { get; private set; }
     public Transform LeaderPos { get; private set; }
-    
-    [Header("FLOCKING PROPERTIES")] 
 
-    [Range(0, 5)] public float cohesionWeight = 1.0f;
+    [Header("FLOCKING PROPERTIES")] [Range(0, 5)]
+    public float cohesionWeight = 1.0f;
+
     [Range(0, 5)] public float alignmentWeight = 1.0f;
     [Range(0, 5)] public float separationWeight = 1.5f;
     [Range(0, 5)] public float separationDistance = 2.0f;
 
     [Range(0, 5)] public float leaderFollowWeight = 1.5f;
     [Range(0, 5)] public float minDistanceLeader = 1f;
-   
+
     private List<IFlockingBehaviour> _flocking;
 
-    [Header("FX")]
-    
-    public LineRenderer attackFXRenderer;
+    [Header("FX")] public LineRenderer attackFXRenderer;
 
     public NPC()
     {
@@ -66,7 +64,7 @@ public class NPC : Entity
         Vector3 steering = Vector3.zero;
 
         Vector3 obstacleAvoidance = _obstacleAvoidance.CalculateSteeringVelocity(this);
-        
+
         if (obstacleAvoidance.magnitude > 0.1f)
             steering = obstacleAvoidance;
         else
@@ -80,7 +78,7 @@ public class NPC : Entity
 
         Velocity += steering;
         Velocity = Vector3.ClampMagnitude(Velocity, MaxSpeed);
-        
+
         transform.position += Velocity * Time.deltaTime;
 
         if (Velocity.sqrMagnitude > 0.01f)
@@ -156,5 +154,39 @@ public class NPC : Entity
 
         if (Health <= 0)
             Destroy(gameObject);
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Field of View
+        Vector3 forward = transform.forward;
+        float halfAngle = NPC_VIEWANGLE / 2f;
+
+        Vector3 leftBoundary = Quaternion.Euler(0, -halfAngle, 0) * forward;
+        Vector3 rightBoundary = Quaternion.Euler(0, halfAngle, 0) * forward;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawRay(transform.position, leftBoundary * NPC_VIEWRADIUS);
+        Gizmos.DrawRay(transform.position, rightBoundary * NPC_VIEWRADIUS);
+
+        // Line of Sight 
+        if (LeaderPos != null)
+        {
+            Gizmos.color = HasLineOfSight(LeaderPos.position) ? Color.green : Color.red;
+            Gizmos.DrawLine(transform.position + Vector3.up * 0.5f, LeaderPos.position);
+        }
+
+
+        // Obstacle Avoidance (Raycasts)
+        Gizmos.color = Color.blue;
+        Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
+        Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
+
+        Gizmos.DrawRay(leftRayOrigin, transform.forward * DISTANCE_OBSTACLE_AVOIDANCE);
+        Gizmos.DrawRay(rightRayOrigin, transform.forward * DISTANCE_OBSTACLE_AVOIDANCE);
+
+        // Flocking radius
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, separationDistance);
     }
 }

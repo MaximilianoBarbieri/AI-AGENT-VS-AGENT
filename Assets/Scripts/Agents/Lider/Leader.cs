@@ -75,4 +75,27 @@ public class Leader : Entity
             }
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        // Line of Sight hacia objetivo
+
+        if (DirectTargetPos != null)
+        {
+            Gizmos.color = HasLineOfSight(DirectTargetPos) ? Color.green : Color.red;
+            Gizmos.DrawLine(transform.position + Vector3.up * 0.5f, DirectTargetPos);
+        }
+
+        // Obstacle Avoidance (Raycasts)
+        Gizmos.color = Color.blue;
+        Vector3 leftRayOrigin = transform.position + transform.right * -0.5f;
+        Vector3 rightRayOrigin = transform.position + transform.right * 0.5f;
+
+        Gizmos.DrawRay(leftRayOrigin, transform.forward * Utils.DISTANCE_OBSTACLE_AVOIDANCE);
+        Gizmos.DrawRay(rightRayOrigin, transform.forward * Utils.DISTANCE_OBSTACLE_AVOIDANCE);
+
+        // Rango de ataque (supongo que es igual al ViewRadius)
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, LEADER_VIEW_RADIUS);
+    }
 }
